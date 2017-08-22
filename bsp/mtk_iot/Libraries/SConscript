@@ -1,0 +1,61 @@
+import rtconfig
+Import('RTT_ROOT')
+from building import *
+
+# get current directory
+cwd = GetCurrentDir()
+
+# The set of source files associated with this SConscript file.
+src = Split("""
+startup/system_mt7687.c
+startup/sys_init.c
+driver/board/mt76x7_hdk/ept/src/bsp_gpio_ept_config.c
+driver/board/mt76x7_hdk/external_flash/src/bsp_flash_config.c
+""")
+
+src += Glob('driver/chip/mt7687/src/common/*.c')
+src += Glob('driver/chip/mt7687/src/*.c')
+src += Glob('driver/chip/mt7687/src_core/*.c')
+
+
+src += Split("""
+kernel/service/src/syslog.c
+""")
+
+#add for startup script 
+if rtconfig.CROSS_TOOL == 'gcc':
+    src = src + ['startup/mt7687/gcc/startup_mt7687.s']
+    src = src + ['prebuilt/driver/chip/mt7687/lib/libhal_protected_CM4_GCC.lib']
+elif rtconfig.CROSS_TOOL == 'keil':
+    src = src + ['startup/mt7687/mdk-arm/startup_mt7687.s']
+    src = src + ['prebuilt/driver/chip/mt7687/lib/libhal_protected_CM4_Keil.lib']
+elif rtconfig.CROSS_TOOL == 'iar':
+    src = src + ['startup/mt7687/iar/startup_mt7687.s']
+    src = src + ['prebuilt/driver/chip/mt7687/lib/libhal_protected_CM4_IAR.lib']
+
+
+path = [cwd + r'/startup/',
+	cwd + r'/startup/mt7687/',
+    cwd + r'/driver/CMSIS/Include',
+    cwd + r'/driver/CMSIS/Device/MTK/mt7687/Include',
+    cwd + r'/driver/chip/mt7687/inc',
+    cwd + r'/driver/chip/mt7687/src/common/include',
+    cwd + r'/driver/chip/inc']
+
+path += [cwd + r'/driver/chip/inc', 
+	cwd + r'/driver/chip/mt7687/inc', 
+    cwd + r'/driver/chip/mt7687/src/common/include',
+    cwd + r'/driver/chip/mt7687/src_core/',
+    cwd + r'/driver/chip/mt7687/src_core/MDK-ARM/libhal_core_CM4_Keil/inc']
+
+path += [cwd + r'/driver/board/mt76x7_hdk/external_flash/inc',
+	cwd + r'/driver/board/mt76x7_hdk/ept/inc']
+
+path += [cwd + r'/middleware/MTK/connsys/inc']
+path += [cwd + r'/kernel/service/inc']
+
+#CPPDEFINES = ['USE_STDPERIPH_DRIVER', rtconfig.STM32_TYPE]
+CPPDEFINES = ['MTK_DEBUG_LEVEL_NONE PRODUCT_VERSION=7697 CFG_SUPPORT_SMNT_PROTO=2 MTK_HAL_NO_LOG_ENABLE MTK_MINISUPP_ENABLE MTK_WIFI_PRIVILEGE_ENABLE ']
+group = DefineGroup('Libraries', src, depend = [''], CPPPATH = path, CPPDEFINES = CPPDEFINES)
+
+Return('group')
