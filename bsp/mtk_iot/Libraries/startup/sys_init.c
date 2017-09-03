@@ -169,7 +169,7 @@ static void prvSetupHardware(void)
 #ifdef MTK_MINICLI_ENABLE
     bsp_io_def_uart_init();
 #else
-    log_uart_init(HAL_UART_0);
+    //log_uart_init(HAL_UART_0);
 #endif
 
     hal_flash_init();

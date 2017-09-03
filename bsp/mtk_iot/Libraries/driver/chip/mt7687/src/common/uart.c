@@ -125,14 +125,14 @@ void halUART_HWInit(UART_PORT u_port)
     halUART_SetFormat(u_port, UART_BAUDRATE, UART_WLS_8, UART_NONE_PARITY, UART_1_STOP);
     if (u_port == UART_PORT0) {
         //UART_HWInit(CM4_UART1_BASE);    /*temp*/
-        HAL_REG_32(CM4_UART1_BASE + UART_VFIFO_EN_REG) |= 0x1;
+        //HAL_REG_32(CM4_UART1_BASE + UART_VFIFO_EN_REG) |= 0x1;
 
         /* ISR */
         //NVIC_EnableIRQ(CM4_UART1_IRQ);
         //NVIC_SetPriority(CM4_UART1_IRQ, CM4_UART1_PRI);
     } else if (u_port == UART_PORT1) {
         //UART_HWInit(CM4_UART2_BASE);    /*temp*/
-        HAL_REG_32(CM4_UART2_BASE + UART_VFIFO_EN_REG) |= 0x1;
+        //HAL_REG_32(CM4_UART2_BASE + UART_VFIFO_EN_REG) |= 0x1;
         /* ISR */
         //NVIC_EnableIRQ(CM4_UART2_IRQ);
         //NVIC_SetPriority(CM4_UART2_IRQ, CM4_UART2_PRI);

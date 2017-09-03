@@ -71,7 +71,7 @@ __isr_vector    DCD     __initial_sp               ; Top of Stack
 
                 
                 ; External Interrupts                                            
-                DCD     isrC_main        ; 16: UART1                   
+                DCD     UART1_IRQHandler        ; 16: UART1                   
                 DCD     isrC_main        ; 17: DMA                     
                 DCD     isrC_main        ; 18: HIF                     
                 DCD     isrC_main        ; 19: I2C1                    
@@ -205,7 +205,10 @@ Reset_Handler   PROC
 isrC_main       PROC
                 EXPORT  isrC_main                  [WEAK]
                 ENDP
-
+					
+UART1_IRQHandler PROC
+                EXPORT  UART1_IRQHandler                  [WEAK]
+                ENDP
 ; Dummy Exception Handlers (infinite loops which can be modified)
 
 NMI_Handler     PROC

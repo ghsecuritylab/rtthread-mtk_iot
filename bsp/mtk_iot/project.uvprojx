@@ -370,7 +370,7 @@
               <MiscControls />
               <Define>MTK_DEBUG_LEVEL_NONE PRODUCT_VERSION=7697 CFG_SUPPORT_SMNT_PROTO=2 MTK_HAL_NO_LOG_ENABLE MTK_MINISUPP_ENABLE MTK_WIFI_PRIVILEGE_ENABLE </Define>
               <Undefine />
-              <IncludePath>applications;.;drivers;Libraries\startup;Libraries\startup\mt7687;Libraries\driver\CMSIS\Include;Libraries\driver\CMSIS\Device\MTK\mt7687\Include;Libraries\driver\chip\mt7687\inc;Libraries\driver\chip\mt7687\src\common\include;Libraries\driver\chip\inc;Libraries\driver\chip\inc;Libraries\driver\chip\mt7687\inc;Libraries\driver\chip\mt7687\src\common\include;Libraries\driver\chip\mt7687\src_core;Libraries\driver\chip\mt7687\src_core\MDK-ARM\libhal_core_CM4_Keil\inc;Libraries\driver\board\mt76x7_hdk\external_flash\inc;Libraries\driver\board\mt76x7_hdk\ept\inc;Libraries\middleware\MTK\connsys\inc;Libraries\kernel\service\inc;..\..\include;..\..\libcpu\arm\cortex-m4;..\..\libcpu\arm\common;..\..\components\drivers\include;..\..\components\drivers\include</IncludePath>
+              <IncludePath>applications;.;drivers;Libraries\startup;Libraries\startup\mt7687;Libraries\driver\CMSIS\Include;Libraries\driver\CMSIS\Device\MTK\mt7687\Include;Libraries\driver\chip\mt7687\inc;Libraries\driver\chip\mt7687\src\common\include;Libraries\driver\chip\inc;Libraries\driver\chip\inc;Libraries\driver\chip\mt7687\inc;Libraries\driver\chip\mt7687\src\common\include;Libraries\driver\chip\mt7687\src_core;Libraries\driver\chip\mt7687\src_core\MDK-ARM\libhal_core_CM4_Keil\inc;Libraries\driver\board\mt76x7_hdk\external_flash\inc;Libraries\driver\board\mt76x7_hdk\ept\inc;Libraries\middleware\MTK\connsys\inc;Libraries\kernel\service\inc;..\..\..\rt-thread\include;..\..\..\rt-thread\libcpu\arm\cortex-m4;..\..\..\rt-thread\libcpu\arm\common;..\..\..\rt-thread\components\drivers\include;..\..\..\rt-thread\components\drivers\include;..\..\..\rt-thread\components\finsh</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -403,7 +403,7 @@
             <ScatterFile>.\flash.sct</ScatterFile>
             <IncludeLibs />
             <IncludeLibsPath />
-            <Misc />
+            <Misc> --keep *.o(FSymTab) --keep *.o(VSymTab) </Misc>
             <LinkerInputFile />
             <DisabledWarnings>6340,6329,6314</DisabledWarnings>
           </LDads>
@@ -957,84 +957,84 @@
             <File>
               <FileName>clock.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\src\clock.c</FilePath>
+              <FilePath>..\..\..\rt-thread\src\clock.c</FilePath>
             </File>
           </Files>
           <Files>
             <File>
               <FileName>device.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\src\device.c</FilePath>
+              <FilePath>..\..\..\rt-thread\src\device.c</FilePath>
             </File>
           </Files>
           <Files>
             <File>
               <FileName>idle.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\src\idle.c</FilePath>
+              <FilePath>..\..\..\rt-thread\src\idle.c</FilePath>
             </File>
           </Files>
           <Files>
             <File>
               <FileName>ipc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\src\ipc.c</FilePath>
+              <FilePath>..\..\..\rt-thread\src\ipc.c</FilePath>
             </File>
           </Files>
           <Files>
             <File>
               <FileName>irq.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\src\irq.c</FilePath>
+              <FilePath>..\..\..\rt-thread\src\irq.c</FilePath>
             </File>
           </Files>
           <Files>
             <File>
               <FileName>kservice.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\src\kservice.c</FilePath>
+              <FilePath>..\..\..\rt-thread\src\kservice.c</FilePath>
             </File>
           </Files>
           <Files>
             <File>
               <FileName>mem.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\src\mem.c</FilePath>
+              <FilePath>..\..\..\rt-thread\src\mem.c</FilePath>
             </File>
           </Files>
           <Files>
             <File>
               <FileName>mempool.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\src\mempool.c</FilePath>
+              <FilePath>..\..\..\rt-thread\src\mempool.c</FilePath>
             </File>
           </Files>
           <Files>
             <File>
               <FileName>object.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\src\object.c</FilePath>
+              <FilePath>..\..\..\rt-thread\src\object.c</FilePath>
             </File>
           </Files>
           <Files>
             <File>
               <FileName>scheduler.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\src\scheduler.c</FilePath>
+              <FilePath>..\..\..\rt-thread\src\scheduler.c</FilePath>
             </File>
           </Files>
           <Files>
             <File>
               <FileName>thread.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\src\thread.c</FilePath>
+              <FilePath>..\..\..\rt-thread\src\thread.c</FilePath>
             </File>
           </Files>
           <Files>
             <File>
               <FileName>src_timer.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\src\timer.c</FilePath>
+              <FilePath>..\..\..\rt-thread\src\timer.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -1044,35 +1044,35 @@
             <File>
               <FileName>cpuport.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\libcpu\arm\cortex-m4\cpuport.c</FilePath>
+              <FilePath>..\..\..\rt-thread\libcpu\arm\cortex-m4\cpuport.c</FilePath>
             </File>
           </Files>
           <Files>
             <File>
               <FileName>context_rvds.S</FileName>
               <FileType>2</FileType>
-              <FilePath>..\..\libcpu\arm\cortex-m4\context_rvds.S</FilePath>
+              <FilePath>..\..\..\rt-thread\libcpu\arm\cortex-m4\context_rvds.S</FilePath>
             </File>
           </Files>
           <Files>
             <File>
               <FileName>backtrace.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\libcpu\arm\common\backtrace.c</FilePath>
+              <FilePath>..\..\..\rt-thread\libcpu\arm\common\backtrace.c</FilePath>
             </File>
           </Files>
           <Files>
             <File>
               <FileName>div0.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\libcpu\arm\common\div0.c</FilePath>
+              <FilePath>..\..\..\rt-thread\libcpu\arm\common\div0.c</FilePath>
             </File>
           </Files>
           <Files>
             <File>
               <FileName>showmem.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\libcpu\arm\common\showmem.c</FilePath>
+              <FilePath>..\..\..\rt-thread\libcpu\arm\common\showmem.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -1082,49 +1082,143 @@
             <File>
               <FileName>serial.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\components\drivers\serial\serial.c</FilePath>
+              <FilePath>..\..\..\rt-thread\components\drivers\serial\serial.c</FilePath>
             </File>
           </Files>
           <Files>
             <File>
               <FileName>completion.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\components\drivers\src\completion.c</FilePath>
+              <FilePath>..\..\..\rt-thread\components\drivers\src\completion.c</FilePath>
             </File>
           </Files>
           <Files>
             <File>
               <FileName>dataqueue.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\components\drivers\src\dataqueue.c</FilePath>
+              <FilePath>..\..\..\rt-thread\components\drivers\src\dataqueue.c</FilePath>
             </File>
           </Files>
           <Files>
             <File>
               <FileName>pipe.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\components\drivers\src\pipe.c</FilePath>
+              <FilePath>..\..\..\rt-thread\components\drivers\src\pipe.c</FilePath>
             </File>
           </Files>
           <Files>
             <File>
               <FileName>portal.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\components\drivers\src\portal.c</FilePath>
+              <FilePath>..\..\..\rt-thread\components\drivers\src\portal.c</FilePath>
             </File>
           </Files>
           <Files>
             <File>
               <FileName>ringbuffer.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\components\drivers\src\ringbuffer.c</FilePath>
+              <FilePath>..\..\..\rt-thread\components\drivers\src\ringbuffer.c</FilePath>
             </File>
           </Files>
           <Files>
             <File>
               <FileName>workqueue.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\components\drivers\src\workqueue.c</FilePath>
+              <FilePath>..\..\..\rt-thread\components\drivers\src\workqueue.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>finsh</GroupName>
+          <Files>
+            <File>
+              <FileName>shell.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\rt-thread\components\finsh\shell.c</FilePath>
+            </File>
+          </Files>
+          <Files>
+            <File>
+              <FileName>symbol.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\rt-thread\components\finsh\symbol.c</FilePath>
+            </File>
+          </Files>
+          <Files>
+            <File>
+              <FileName>cmd.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\rt-thread\components\finsh\cmd.c</FilePath>
+            </File>
+          </Files>
+          <Files>
+            <File>
+              <FileName>finsh_compiler.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\rt-thread\components\finsh\finsh_compiler.c</FilePath>
+            </File>
+          </Files>
+          <Files>
+            <File>
+              <FileName>finsh_error.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\rt-thread\components\finsh\finsh_error.c</FilePath>
+            </File>
+          </Files>
+          <Files>
+            <File>
+              <FileName>finsh_heap.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\rt-thread\components\finsh\finsh_heap.c</FilePath>
+            </File>
+          </Files>
+          <Files>
+            <File>
+              <FileName>finsh_init.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\rt-thread\components\finsh\finsh_init.c</FilePath>
+            </File>
+          </Files>
+          <Files>
+            <File>
+              <FileName>finsh_node.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\rt-thread\components\finsh\finsh_node.c</FilePath>
+            </File>
+          </Files>
+          <Files>
+            <File>
+              <FileName>finsh_ops.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\rt-thread\components\finsh\finsh_ops.c</FilePath>
+            </File>
+          </Files>
+          <Files>
+            <File>
+              <FileName>finsh_parser.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\rt-thread\components\finsh\finsh_parser.c</FilePath>
+            </File>
+          </Files>
+          <Files>
+            <File>
+              <FileName>finsh_var.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\rt-thread\components\finsh\finsh_var.c</FilePath>
+            </File>
+          </Files>
+          <Files>
+            <File>
+              <FileName>finsh_vm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\rt-thread\components\finsh\finsh_vm.c</FilePath>
+            </File>
+          </Files>
+          <Files>
+            <File>
+              <FileName>finsh_token.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\rt-thread\components\finsh\finsh_token.c</FilePath>
             </File>
           </Files>
         </Group>
