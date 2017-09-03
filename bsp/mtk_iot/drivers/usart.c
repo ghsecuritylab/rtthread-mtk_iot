@@ -44,6 +44,8 @@ struct rt_serial_device serial1;
 
 #endif
 
+int chr = -1;
+
 static void uart_isr(hal_nvic_irq_t irq_number)
 {
 #define UART_BASE_ADDR(port_no) \
@@ -81,10 +83,13 @@ static void uart_isr(hal_nvic_irq_t irq_number)
             break;
             
         case 0x04:
-            rt_kprintf("LSR: %08X\n", HAL_REG_32(base + UART_IIR));
-            rt_kprintf("IIR: %08X, IIR & 0x3F: %08X\n", IIR, IIR & 0x3F);
+            rt_kprintf("LSR: %08X\n", HAL_REG_32(base + UART_LSR));
+            chr = HAL_REG_32(base + UART_RBR);
+            rt_kprintf("RBR: %08X\n", chr);
+            //rt_kprintf("RBR: %08X\n", HAL_REG_32(base + UART_RBR));
+            //rt_kprintf("IIR: %08X, IIR & 0x3F: %08X\n", IIR, IIR & 0x3F);
             rt_hw_serial_isr(&serial1, RT_SERIAL_EVENT_RX_IND);
-            break;
+           break;
         
         case 0x0C:
             //rx data timeout
@@ -140,78 +145,64 @@ rt_err_t mt_configure(struct rt_serial_device *serial, struct serial_configure *
     
     if(cfg->baud_rate == BAUD_RATE_115200)
     {
-        rt_kprintf("%s, %d\n", __FUNCTION__, __LINE__);
         uart_config.baudrate = HAL_UART_BAUDRATE_115200;
     }
     else if(cfg->baud_rate == BAUD_RATE_57600)
     {
-        rt_kprintf("%s, %d\n", __FUNCTION__, __LINE__);
         uart_config.baudrate = HAL_UART_BAUDRATE_57600;
     }
     else if(cfg->baud_rate == BAUD_RATE_38400)
     {
-        rt_kprintf("%s, %d\n", __FUNCTION__, __LINE__);
         uart_config.baudrate = HAL_UART_BAUDRATE_38400;
     }
     else if(cfg->baud_rate == BAUD_RATE_19200)
     {
-        rt_kprintf("%s, %d\n", __FUNCTION__, __LINE__);
         uart_config.baudrate = HAL_UART_BAUDRATE_19200;
     }
     else if(cfg->baud_rate == BAUD_RATE_9600)
     {
-        rt_kprintf("%s, %d\n", __FUNCTION__, __LINE__);
         uart_config.baudrate = HAL_UART_BAUDRATE_9600;
     }
     
     //data_bits
     if(cfg->data_bits == DATA_BITS_5)
     {
-        rt_kprintf("%s, %d\n", __FUNCTION__, __LINE__);
         uart_config.word_length = HAL_UART_WORD_LENGTH_5;
     }
     else if(cfg->data_bits == DATA_BITS_6)
     {
-        rt_kprintf("%s, %d\n", __FUNCTION__, __LINE__);
         uart_config.word_length = HAL_UART_WORD_LENGTH_6;
     }
     else if(cfg->data_bits == DATA_BITS_7)
     {
-        rt_kprintf("%s, %d\n", __FUNCTION__, __LINE__);
         uart_config.word_length = HAL_UART_WORD_LENGTH_7;
     }
     else if(cfg->data_bits == DATA_BITS_8)
     {
-        rt_kprintf("%s, %d\n", __FUNCTION__, __LINE__);
         uart_config.word_length = HAL_UART_WORD_LENGTH_8;
     }
 
     //stop_bits
     if(cfg->stop_bits == STOP_BITS_1)
     {
-        rt_kprintf("%s, %d\n", __FUNCTION__, __LINE__);
         uart_config.stop_bit = HAL_UART_STOP_BIT_1;
     }
     else if(cfg->stop_bits == STOP_BITS_2)
     {
-        rt_kprintf("%s, %d\n", __FUNCTION__, __LINE__);
         uart_config.stop_bit = HAL_UART_STOP_BIT_1;
     }
 
     //parity
     if(cfg->parity == PARITY_NONE)
     {
-        rt_kprintf("%s, %d\n", __FUNCTION__, __LINE__);
         uart_config.parity = HAL_UART_PARITY_NONE;
     }
     else if(cfg->parity == PARITY_ODD)
     {
-        rt_kprintf("%s, %d\n", __FUNCTION__, __LINE__);
         uart_config.parity = HAL_UART_PARITY_ODD;
     }
     else if(cfg->parity == PARITY_EVEN)
     {
-        rt_kprintf("%s, %d\n", __FUNCTION__, __LINE__);
         uart_config.parity = HAL_UART_PARITY_EVEN;
     }
 
@@ -225,8 +216,6 @@ rt_err_t mt_configure(struct rt_serial_device *serial, struct serial_configure *
 
         HAL_REG_32(CM4_UART1_BASE + UART_FCR) = 0x07; 
     }
-    
-
     
     return RT_EOK;
 }
@@ -273,15 +262,20 @@ int mt_putc(struct rt_serial_device *serial, char c)
 int mt_getc(struct rt_serial_device *serial)
 {
     int ch;
-    struct mt_uart* uart;
+//    struct mt_uart* uart;
 
-    RT_ASSERT(serial != RT_NULL);
+//    RT_ASSERT(serial != RT_NULL);
+//    
+//    uart = (struct mt_uart *)serial->parent.user_data;
+
+//    ch = -1;
+//    ch = hal_uart_get_char(uart->uart_device);
+
+//    return ch;
     
-    uart = (struct mt_uart *)serial->parent.user_data;
-
-    ch = -1;
-    ch = hal_uart_get_char(uart->uart_device);
-
+    ch = chr;
+    chr = -1;
+    
     return ch;
 }
 
@@ -346,6 +340,7 @@ void rt_hw_usart_init(void)
 
 void dump_uart1_reg(void)
 {    
+    rt_kprintf("---------------------------------------------\n");
     //PRINT_UART1_REG(UART_RBR);        // receive data
     //PRINT_UART1_REG(UART_THR);        // 
     PRINT_UART1_REG(UART_IER);

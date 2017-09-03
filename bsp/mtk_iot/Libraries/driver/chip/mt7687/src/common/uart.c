@@ -81,12 +81,12 @@ int getc_nowait(void)
 {
     char c;
 
-    if (HAL_REG_32(CONSOLE + UART_LSR) & 0x1) { //  DataReady bit
-        c = HAL_REG_32(CONSOLE + UART_RBR);
-        return c;
-    } else {
+//    if (HAL_REG_32(CONSOLE + UART_LSR) & 0x1) { //  DataReady bit
+//        c = HAL_REG_32(CONSOLE + UART_RBR);
+//        return c;
+//    } else {
         return -1;
-    }
+//    }
 }
 
 /* MT7687 CM4 */
@@ -101,17 +101,29 @@ void uart_output_char(UART_PORT port_no, unsigned char c)
     return;
 }
 
+#include <rtthread.h>
+
+void delay(volatile int i)
+{    
+    while (i--)
+        i = i;
+}
 
 /* MT7687 CM4 */
 uint8_t uart_input_char(UART_PORT port_no)
 {
     unsigned int base = UART_BASE_ADDR(port_no);
-    char         c;
+    char         c = 'a';
+    uint32_t LSR; 
 
-    while (!(HAL_REG_32(base + UART_LSR) & 0x1)) //  DataReady bit
-        ;
+//    while (!((LSR = HAL_REG_32(base + UART_LSR)) & 0x1)) //  DataReady bit
+//    {
+//        //rt_thread_delay(5 * RT_TICK_PER_SECOND);
+//        //delay(0x10000000);
+//        //rt_kprintf("LSR: %08X\n", LSR);
+//    }
 
-    c = HAL_REG_32(base + UART_RBR);
+//    c = HAL_REG_32(base + UART_RBR);
 
     return c;
 }

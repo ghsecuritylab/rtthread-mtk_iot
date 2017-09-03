@@ -88,10 +88,10 @@ void rt_init_thread_entry(void* parameter)
     while(1)
     {
         //rt_kprintf("%s %d %s\n", __FUNCTION__, t++, __TIME__);
-        {
-            extern void dump_uart1_reg(void);
-            dump_uart1_reg();
-        }
+//        {
+//            extern void dump_uart1_reg(void);
+//            dump_uart1_reg();
+//        }
         rt_thread_delay(RT_TICK_PER_SECOND * 5);
     }
 }

@@ -17,6 +17,11 @@
 #include "board.h"
 #include "usart.h"
 
+void MemManage_Handler(void)
+{
+    rt_kprintf("%s\n", __FUNCTION__);
+}
+
 /**
  * This is the timer interrupt service routine.
  *
