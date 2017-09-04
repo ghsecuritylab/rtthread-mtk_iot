@@ -71,7 +71,7 @@ __isr_vector    DCD     __initial_sp               ; Top of Stack
 
                 
                 ; External Interrupts                                            
-                DCD     UART1_IRQHandler        ; 16: UART1                   
+                DCD     isrC_main        ; 16: UART1                   
                 DCD     isrC_main        ; 17: DMA                     
                 DCD     isrC_main        ; 18: HIF                     
                 DCD     isrC_main        ; 19: I2C1                    

@@ -25,18 +25,22 @@
 
 void dump_uart1_reg(void);
 
+#define UART_BASE_ADDR(port_no) \
+            ((port_no == UART_PORT0) ? CM4_UART1_BASE : CM4_UART2_BASE)
 
 struct mt_uart
 {
     hal_uart_port_t uart_device;
+    rt_uint32_t uart_base;
     IRQn_Type irq;
     uint32_t priority;
 };
 
 #if defined (RT_USING_UART1)
-struct mt_uart uart1 = 
+const struct mt_uart uart1 = 
 {
     HAL_UART_0,
+    CM4_UART1_BASE,
 	CM4_UART1_IRQ,
 	CM4_UART1_PRI,
 };
@@ -44,18 +48,12 @@ struct rt_serial_device serial1;
 
 #endif
 
-int chr = -1;
-
 static void uart_isr(hal_nvic_irq_t irq_number)
 {
-#define UART_BASE_ADDR(port_no) \
-            ((port_no == UART_PORT0) ? CM4_UART1_BASE : CM4_UART2_BASE)
     UART_PORT u_port;
     unsigned int base;
     uint16_t IIR;
     
-    static uint32_t rx_timeout = 0;
-
     if (irq_number == CM4_UART1_IRQ)
     {
         u_port = UART_PORT0;
@@ -78,47 +76,17 @@ static void uart_isr(hal_nvic_irq_t irq_number)
     IIR = HAL_REG_32(base + UART_IIR);
     switch (IIR & 0x3F)
     {
-        case 0x03:
-            rt_kprintf("hello\n");
-            break;
-            
         case 0x04:
-            rt_kprintf("LSR: %08X\n", HAL_REG_32(base + UART_LSR));
-            chr = HAL_REG_32(base + UART_RBR);
-            rt_kprintf("RBR: %08X\n", chr);
-            //rt_kprintf("RBR: %08X\n", HAL_REG_32(base + UART_RBR));
-            //rt_kprintf("IIR: %08X, IIR & 0x3F: %08X\n", IIR, IIR & 0x3F);
             rt_hw_serial_isr(&serial1, RT_SERIAL_EVENT_RX_IND);
            break;
         
         case 0x0C:
-            //rx data timeout
             rt_hw_serial_isr(&serial1, RT_SERIAL_EVENT_RX_IND);
-//            if (rx_timeout % 5000 == 0)
-//            {
-//                rt_kprintf("rx timeout counter: %d\n", rx_timeout);
-//            }
-//            rx_timeout++;
             return ;
             
         default:
             break;
     }
-    
-    rt_kprintf("IIR: %08X, IIR & 0x3F: %08X\n", IIR, IIR & 0x3F);
-
-}
-
-void UART1_IRQHandler(void)
-{
-    /* enter interrupt */
-    rt_interrupt_enter();
-
-    uart_isr(CM4_UART1_IRQ);
-    //rt_kprintf("%s\n", __FUNCTION__);
-
-    /* leave interrupt */
-    rt_interrupt_leave();
 }
 
 static void UART_IRQHandler(hal_nvic_irq_t irq_number)
@@ -126,8 +94,7 @@ static void UART_IRQHandler(hal_nvic_irq_t irq_number)
     /* enter interrupt */
     rt_interrupt_enter();
 
-//    uart_isr(irq_number);
-        rt_kprintf("%s\n", __FUNCTION__);
+    uart_isr(irq_number);
 
     /* leave interrupt */
     rt_interrupt_leave();
@@ -210,11 +177,11 @@ rt_err_t mt_configure(struct rt_serial_device *serial, struct serial_configure *
     hal_uart_init(uart->uart_device, &uart_config);
     
     {
-        uint16_t IER = HAL_REG_32(CM4_UART1_BASE + UART_IER);
-                
-        HAL_REG_32(CM4_UART1_BASE + UART_IER) = IER | 0x01; 
+        // enable receive interrupt
+        uint16_t IER = HAL_REG_32(uart->uart_base + UART_IER);
+        HAL_REG_32(uart->uart_base + UART_IER) = IER | 0x01; 
 
-        HAL_REG_32(CM4_UART1_BASE + UART_FCR) = 0x07; 
+        //HAL_REG_32(uart->uart_base + UART_FCR) = 0x07; 
     }
     
     return RT_EOK;
@@ -261,20 +228,15 @@ int mt_putc(struct rt_serial_device *serial, char c)
 
 int mt_getc(struct rt_serial_device *serial)
 {
-    int ch;
-//    struct mt_uart* uart;
+    int ch = -1;
+    struct mt_uart* uart = (struct mt_uart *)serial->parent.user_data;
 
-//    RT_ASSERT(serial != RT_NULL);
-//    
-//    uart = (struct mt_uart *)serial->parent.user_data;
-
-//    ch = -1;
-//    ch = hal_uart_get_char(uart->uart_device);
-
-//    return ch;
-    
-    ch = chr;
-    chr = -1;
+    RT_ASSERT(serial != RT_NULL);
+        
+    if (HAL_REG_32(uart->uart_base + UART_LSR) & 0x01)
+    {
+        ch = HAL_REG_32(uart->uart_base + UART_RBR);    
+    }
     
     return ch;
 }
@@ -302,7 +264,7 @@ static void uart_gpio_config(void)
 
 }
 
-static void nvic_uart_config(struct mt_uart* uart)
+static void nvic_uart_config(const struct mt_uart* uart)
 {
     RT_ASSERT(uart != RT_NULL);
     
@@ -313,7 +275,7 @@ static void nvic_uart_config(struct mt_uart* uart)
 
 void rt_hw_usart_init(void)
 {
-    struct mt_uart* uart;
+    const struct mt_uart* uart;
     struct serial_configure config = RT_SERIAL_CONFIG_DEFAULT;
     
     uart_gpio_config();
@@ -327,13 +289,13 @@ void rt_hw_usart_init(void)
     serial1.ops = &mt_uart_ops;
     serial1.config = config;
 
-    //
     rt_hw_serial_register(&serial1, "uart1",
                             RT_DEVICE_FLAG_RDWR | RT_DEVICE_FLAG_INT_RX,
-                            uart);
+                            (void *)uart);
 #endif  /* RT_USING_UART1 */
 
 }
+
 
 #define PRINT_UART1_REG(__NAME__) \
     rt_kprintf("%20s %08X: %08X\n", #__NAME__, CM4_UART1_BASE + __NAME__, HAL_REG_32(CM4_UART1_BASE + __NAME__))
@@ -382,3 +344,5 @@ void dump_uart1_reg(void)
     
     rt_kprintf("\n\n");
 }
+#include <finsh.h>
+FINSH_FUNCTION_EXPORT_CMD(dump_uart1_reg, udump, uart dump all readable registers);
