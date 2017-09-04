@@ -17,6 +17,11 @@
 #include "board.h"
 #include "usart.h"
 
+void MemManage_Handler(void)
+{
+    rt_kprintf("%s\n", __FUNCTION__);
+}
+
 /**
  * This is the timer interrupt service routine.
  *
@@ -42,11 +47,13 @@ void rt_hw_board_init(void)
     /* Configure the SysTick */
     SysTick_Config(SystemCoreClock / RT_TICK_PER_SECOND);
 	
-//    rt_hw_usart_init();
+    rt_hw_usart_init();
 	
 #ifdef RT_USING_CONSOLE
     rt_console_set_device(RT_CONSOLE_DEVICE_NAME);
 #endif
+    
+    //rt_kprintf("%s %s\n", __DATE__, __TIME__);
 }
 
 /*@}*/

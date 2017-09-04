@@ -205,7 +205,10 @@ Reset_Handler   PROC
 isrC_main       PROC
                 EXPORT  isrC_main                  [WEAK]
                 ENDP
-
+					
+UART1_IRQHandler PROC
+                EXPORT  UART1_IRQHandler                  [WEAK]
+                ENDP
 ; Dummy Exception Handlers (infinite loops which can be modified)
 
 NMI_Handler     PROC

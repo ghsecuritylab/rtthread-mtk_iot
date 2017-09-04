@@ -82,16 +82,23 @@ void rt_init_thread_entry(void* parameter)
 	finsh_set_device(RT_CONSOLE_DEVICE_NAME);
 #endif
 
+    rt_kprintf("%s %d %s\n", __FUNCTION__, t++, __TIME__);
+    
+
     while(1)
     {
-        rt_kprintf("%s %d\n", __FUNCTION__, t ++);
-        rt_thread_delay(100);
+        //rt_kprintf("%s %d %s\n", __FUNCTION__, t++, __TIME__);
+//        {
+//            extern void dump_uart1_reg(void);
+//            dump_uart1_reg();
+//        }
+        rt_thread_delay(RT_TICK_PER_SECOND * 5);
     }
 }
-void rt_hw_console_output(const char *str)
-{
-	printf("%s\n", str);
-}
+//void rt_hw_console_output(const char *str)
+//{
+//	printf("%s\n", str);
+//}
 
 int rt_application_init(void)
 {

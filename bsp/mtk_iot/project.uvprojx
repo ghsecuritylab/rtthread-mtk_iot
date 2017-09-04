@@ -1,42 +1,45 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="project_projx.xsd">
+
   <SchemaVersion>2.1</SchemaVersion>
+
   <Header>### uVision Project, (C) Keil Software</Header>
+
   <Targets>
     <Target>
       <TargetName>RT-Thread MTK-IOT</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>5060020::V5.06 (build 20)::ARMCC</pCCUsed>
+      <pCCUsed>5060422::V5.06 update 4 (build 422)::ARMCC</pCCUsed>
       <TargetOption>
         <TargetCommonOption>
           <Device>MT7687F</Device>
           <Vendor>MediaTek</Vendor>
-          <PackID>MediaTek.MTx.4.3.0</PackID>
+          <PackID>MediaTek.MTx.4.5.0</PackID>
           <PackURL>http://download.labs.mediatek.com</PackURL>
           <Cpu>IROM(0x10000000,0x00200000) IRAM(0x20000000,0x00040000) IRAM2(0x00100000,0x00010000) CPUTYPE("Cortex-M4") FPU2 CLOCK(12000000) ELITTLE</Cpu>
-          <FlashUtilSpec />
-          <StartupFile />
+          <FlashUtilSpec></FlashUtilSpec>
+          <StartupFile></StartupFile>
           <FlashDriverDll>UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF07687_32M_MXIC -FS010000000 -FL0400000 -FP0($$Device:MT7687F$tools\keil\mt7687\7687_32M_MXIC.FLM))</FlashDriverDll>
           <DeviceId>0</DeviceId>
           <RegisterFile>$$Device:MT7687F$driver\CMSIS\Device\MTK\mt7687\Include\mt7687.h</RegisterFile>
-          <MemoryEnv />
-          <Cmp />
-          <Asm />
-          <Linker />
-          <OHString />
-          <InfinionOptionDll />
-          <SLE66CMisc />
-          <SLE66AMisc />
-          <SLE66LinkerMisc />
-          <SFDFile />
+          <MemoryEnv></MemoryEnv>
+          <Cmp></Cmp>
+          <Asm></Asm>
+          <Linker></Linker>
+          <OHString></OHString>
+          <InfinionOptionDll></InfinionOptionDll>
+          <SLE66CMisc></SLE66CMisc>
+          <SLE66AMisc></SLE66AMisc>
+          <SLE66LinkerMisc></SLE66LinkerMisc>
+          <SFDFile></SFDFile>
           <bCustSvd>0</bCustSvd>
           <UseEnv>0</UseEnv>
-          <BinPath />
-          <IncludePath />
-          <LibPath />
-          <RegisterFilePath />
-          <DBRegisterFilePath />
+          <BinPath></BinPath>
+          <IncludePath></IncludePath>
+          <LibPath></LibPath>
+          <RegisterFilePath></RegisterFilePath>
+          <DBRegisterFilePath></DBRegisterFilePath>
           <TargetStatus>
             <Error>0</Error>
             <ExitCodeStop>0</ExitCodeStop>
@@ -58,8 +61,8 @@
           <BeforeCompile>
             <RunUserProg1>0</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name />
-            <UserProg2Name />
+            <UserProg1Name></UserProg1Name>
+            <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
             <nStopU1X>0</nStopU1X>
@@ -68,8 +71,8 @@
           <BeforeMake>
             <RunUserProg1>0</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name />
-            <UserProg2Name />
+            <UserProg1Name></UserProg1Name>
+            <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
             <nStopB1X>0</nStopB1X>
@@ -79,14 +82,14 @@
             <RunUserProg1>1</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
             <UserProg1Name>fromelf --bin !L --output rtthread.bin</UserProg1Name>
-            <UserProg2Name />
+            <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
             <nStopA1X>0</nStopA1X>
             <nStopA2X>0</nStopA2X>
           </AfterMake>
           <SelectedForBatchBuild>0</SelectedForBatchBuild>
-          <SVCSIdString />
+          <SVCSIdString></SVCSIdString>
         </TargetCommonOption>
         <CommonProperty>
           <UseCPPCompiler>0</UseCPPCompiler>
@@ -100,8 +103,8 @@
           <AssembleAssemblyFile>0</AssembleAssemblyFile>
           <PublicsOnly>0</PublicsOnly>
           <StopOnExitCode>3</StopOnExitCode>
-          <CustomArgument />
-          <IncludeLibraryModules />
+          <CustomArgument></CustomArgument>
+          <IncludeLibraryModules></IncludeLibraryModules>
           <ComprImg>1</ComprImg>
         </CommonProperty>
         <DllOption>
@@ -110,7 +113,7 @@
           <SimDlgDll>DCM.DLL</SimDlgDll>
           <SimDlgDllArguments>-pCM4</SimDlgDllArguments>
           <TargetDllName>SARMCM3.DLL</TargetDllName>
-          <TargetDllArguments />
+          <TargetDllArguments></TargetDllArguments>
           <TargetDlgDll>TCM.DLL</TargetDlgDll>
           <TargetDlgDllArguments>-pCM4</TargetDlgDllArguments>
         </DllOption>
@@ -122,47 +125,6 @@
             <HexOffset>0</HexOffset>
             <Oh166RecLen>16</Oh166RecLen>
           </OPTHX>
-          <Simulator>
-            <UseSimulator>0</UseSimulator>
-            <LoadApplicationAtStartup>1</LoadApplicationAtStartup>
-            <RunToMain>0</RunToMain>
-            <RestoreBreakpoints>1</RestoreBreakpoints>
-            <RestoreWatchpoints>1</RestoreWatchpoints>
-            <RestoreMemoryDisplay>1</RestoreMemoryDisplay>
-            <RestoreFunctions>1</RestoreFunctions>
-            <RestoreToolbox>1</RestoreToolbox>
-            <LimitSpeedToRealTime>0</LimitSpeedToRealTime>
-            <RestoreSysVw>1</RestoreSysVw>
-          </Simulator>
-          <Target>
-            <UseTarget>1</UseTarget>
-            <LoadApplicationAtStartup>1</LoadApplicationAtStartup>
-            <RunToMain>1</RunToMain>
-            <RestoreBreakpoints>1</RestoreBreakpoints>
-            <RestoreWatchpoints>1</RestoreWatchpoints>
-            <RestoreMemoryDisplay>1</RestoreMemoryDisplay>
-            <RestoreFunctions>0</RestoreFunctions>
-            <RestoreToolbox>1</RestoreToolbox>
-            <RestoreTracepoints>0</RestoreTracepoints>
-            <RestoreSysVw>1</RestoreSysVw>
-          </Target>
-          <RunDebugAfterBuild>0</RunDebugAfterBuild>
-          <TargetSelection>6</TargetSelection>
-          <SimDlls>
-            <CpuDll />
-            <CpuDllArguments />
-            <PeripheralDll />
-            <PeripheralDllArguments />
-            <InitializationFile />
-          </SimDlls>
-          <TargetDlls>
-            <CpuDll />
-            <CpuDllArguments />
-            <PeripheralDll />
-            <PeripheralDllArguments />
-            <InitializationFile />
-            <Driver>Segger\JL2CM3.dll</Driver>
-          </TargetDlls>
         </DebugOption>
         <Utilities>
           <Flash1>
@@ -177,9 +139,9 @@
           <Flash2>BIN\UL2CM3.DLL</Flash2>
           <Flash3>"" ()</Flash3>
           <Flash4>.\Libraries\tools\keil\mt7687\7697flash.ini</Flash4>
-          <pFcarmOut />
-          <pFcarmGrp />
-          <pFcArmRoot />
+          <pFcarmOut></pFcarmOut>
+          <pFcarmGrp></pFcarmGrp>
+          <pFcArmRoot></pFcArmRoot>
           <FcArmLst>0</FcArmLst>
         </Utilities>
         <TargetArmAds>
@@ -212,7 +174,7 @@
             <RvctClst>0</RvctClst>
             <GenPPlst>0</GenPPlst>
             <AdsCpuType>"Cortex-M4"</AdsCpuType>
-            <RvctDeviceName />
+            <RvctDeviceName></RvctDeviceName>
             <mOS>0</mOS>
             <uocRom>0</uocRom>
             <uocRam>0</uocRam>
@@ -344,7 +306,7 @@
                 <Size>0x10000</Size>
               </OCR_RVCT10>
             </OnChipMemories>
-            <RvctStartVector />
+            <RvctStartVector></RvctStartVector>
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
@@ -366,11 +328,14 @@
             <v6LangP>0</v6LangP>
             <vShortEn>0</vShortEn>
             <vShortWch>0</vShortWch>
+            <v6Lto>0</v6Lto>
+            <v6WtE>0</v6WtE>
+            <v6Rtti>0</v6Rtti>
             <VariousControls>
-              <MiscControls />
+              <MiscControls></MiscControls>
               <Define>MTK_DEBUG_LEVEL_NONE PRODUCT_VERSION=7697 CFG_SUPPORT_SMNT_PROTO=2 MTK_HAL_NO_LOG_ENABLE MTK_MINISUPP_ENABLE MTK_WIFI_PRIVILEGE_ENABLE </Define>
-              <Undefine />
-              <IncludePath>applications;.;drivers;Libraries\startup;Libraries\startup\mt7687;Libraries\driver\CMSIS\Include;Libraries\driver\CMSIS\Device\MTK\mt7687\Include;Libraries\driver\chip\mt7687\inc;Libraries\driver\chip\mt7687\src\common\include;Libraries\driver\chip\inc;Libraries\driver\chip\inc;Libraries\driver\chip\mt7687\inc;Libraries\driver\chip\mt7687\src\common\include;Libraries\driver\chip\mt7687\src_core;Libraries\driver\chip\mt7687\src_core\MDK-ARM\libhal_core_CM4_Keil\inc;Libraries\driver\board\mt76x7_hdk\external_flash\inc;Libraries\driver\board\mt76x7_hdk\ept\inc;Libraries\middleware\MTK\connsys\inc;Libraries\kernel\service\inc;..\..\include;..\..\libcpu\arm\cortex-m4;..\..\libcpu\arm\common;..\..\components\drivers\include;..\..\components\drivers\include</IncludePath>
+              <Undefine></Undefine>
+              <IncludePath>applications;.;drivers;Libraries\startup;Libraries\startup\mt7687;Libraries\driver\CMSIS\Include;Libraries\driver\CMSIS\Device\MTK\mt7687\Include;Libraries\driver\chip\mt7687\inc;Libraries\driver\chip\mt7687\src\common\include;Libraries\driver\chip\inc;Libraries\driver\chip\inc;Libraries\driver\chip\mt7687\inc;Libraries\driver\chip\mt7687\src\common\include;Libraries\driver\chip\mt7687\src_core;Libraries\driver\chip\mt7687\src_core\MDK-ARM\libhal_core_CM4_Keil\inc;Libraries\driver\board\mt76x7_hdk\external_flash\inc;Libraries\driver\board\mt76x7_hdk\ept\inc;Libraries\middleware\MTK\connsys\inc;Libraries\kernel\service\inc;..\..\..\rt-thread\include;..\..\..\rt-thread\libcpu\arm\cortex-m4;..\..\..\rt-thread\libcpu\arm\common;..\..\..\rt-thread\components\drivers\include;..\..\..\rt-thread\components\drivers\include;..\..\..\rt-thread\components\finsh</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -383,11 +348,12 @@
             <NoWarn>0</NoWarn>
             <uSurpInc>0</uSurpInc>
             <useXO>0</useXO>
+            <uClangAs>0</uClangAs>
             <VariousControls>
-              <MiscControls />
-              <Define />
-              <Undefine />
-              <IncludePath />
+              <MiscControls></MiscControls>
+              <Define></Define>
+              <Undefine></Undefine>
+              <IncludePath></IncludePath>
             </VariousControls>
           </Aads>
           <LDads>
@@ -399,12 +365,12 @@
             <useFile>0</useFile>
             <TextAddressRange>0x08000000</TextAddressRange>
             <DataAddressRange>0x20000000</DataAddressRange>
-            <pXoBase />
+            <pXoBase></pXoBase>
             <ScatterFile>.\flash.sct</ScatterFile>
-            <IncludeLibs />
-            <IncludeLibsPath />
-            <Misc />
-            <LinkerInputFile />
+            <IncludeLibs></IncludeLibs>
+            <IncludeLibsPath></IncludeLibsPath>
+            <Misc>--keep *.o(FSymTab) --keep *.o(VSymTab)</Misc>
+            <LinkerInputFile></LinkerInputFile>
             <DisabledWarnings>6340,6329,6314</DisabledWarnings>
           </LDads>
         </TargetArmAds>
@@ -418,8 +384,6 @@
               <FileType>1</FileType>
               <FilePath>applications\application.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>startup.c</FileName>
               <FileType>1</FileType>
@@ -435,6 +399,11 @@
               <FileType>1</FileType>
               <FilePath>drivers\board.c</FilePath>
             </File>
+            <File>
+              <FileName>usart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\drivers\usart.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -445,505 +414,361 @@
               <FileType>1</FileType>
               <FilePath>Libraries\startup\system_mt7687.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>sys_init.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\startup\sys_init.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>bsp_gpio_ept_config.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\board\mt76x7_hdk\ept\src\bsp_gpio_ept_config.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>bsp_flash_config.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\board\mt76x7_hdk\external_flash\src\bsp_flash_config.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>cos_api.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\common\cos_api.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>dma.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\common\dma.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>flash_sfc.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\common\flash_sfc.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>gpt.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\common\gpt.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>hal_I2C.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\common\hal_I2C.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>hal_gpc.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\common\hal_gpc.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>hal_gpio_7687.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\common\hal_gpio_7687.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>hal_i2s_internal.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\common\hal_i2s_internal.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>hal_irrx.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\common\hal_irrx.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>hal_lp.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\common\hal_lp.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>hal_pcnt.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\common\hal_pcnt.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>hal_pinmux.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\common\hal_pinmux.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>hal_spim.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\common\hal_spim.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>hal_sys.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\common\hal_sys.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>hal_trng.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\common\hal_trng.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>hal_uid.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\common\hal_uid.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>i2c.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\common\i2c.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>ir_tx.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\common\ir_tx.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>low_hal_gpio.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\common\low_hal_gpio.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>low_hal_irrx.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\common\low_hal_irrx.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>low_hal_irtx.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\common\low_hal_irtx.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>low_hal_pwm.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\common\low_hal_pwm.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>low_hal_rtc.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\common\low_hal_rtc.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>low_hal_wdt.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\common\low_hal_wdt.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>nvic.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\common\nvic.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>pinmux.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\common\pinmux.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>pwm.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\common\pwm.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>sfc.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\common\sfc.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>spi_flash.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\common\spi_flash.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>spim.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\common\spim.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>timer.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\common\timer.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>top.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\common\top.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>uart.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\common\uart.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>hal_adc.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\hal_adc.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>hal_aes.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\hal_aes.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>hal_audio_internal_service.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\hal_audio_internal_service.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>hal_cache.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\hal_cache.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>hal_cache_internal.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\hal_cache_internal.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>hal_des.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\hal_des.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>hal_dwt.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\hal_dwt.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>hal_eint.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\hal_eint.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>hal_flash.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\hal_flash.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>hal_gdma.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\hal_gdma.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>hal_gpio.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\hal_gpio.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>hal_gpt.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\hal_gpt.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>hal_i2c_master.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\hal_i2c_master.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>hal_i2s.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\hal_i2s.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>hal_irtx.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\hal_irtx.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>hal_log.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\hal_log.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>hal_md5.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\hal_md5.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>hal_misc.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\hal_misc.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>hal_mpu.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\hal_mpu.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>hal_mpu_internal.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\hal_mpu_internal.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>hal_nvic.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\hal_nvic.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>hal_nvic_internal.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\hal_nvic_internal.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>hal_pwm.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\hal_pwm.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>hal_rtc.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\hal_rtc.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>hal_sha.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\hal_sha.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>hal_spi_master.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\hal_spi_master.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>hal_spi_slave.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\hal_spi_slave.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>hal_uart.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\hal_uart.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>hal_wdt.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\hal_wdt.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>hci_log.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src\hci_log.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>hal_efuse.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src_core\hal_efuse.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>hal_sleep_driver.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src_core\hal_sleep_driver.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>hal_sleep_manager.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\driver\chip\mt7687\src_core\hal_sleep_manager.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>syslog.c</FileName>
               <FileType>1</FileType>
               <FilePath>Libraries\kernel\service\src\syslog.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>startup_mt7687.s</FileName>
               <FileType>2</FileType>
               <FilePath>Libraries\startup\mt7687\mdk-arm\startup_mt7687.s</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>lib_libhal_protected_CM4_Keil.lib</FileName>
               <FileType>4</FileType>
@@ -957,84 +782,62 @@
             <File>
               <FileName>clock.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\src\clock.c</FilePath>
+              <FilePath>..\..\..\rt-thread\src\clock.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>device.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\src\device.c</FilePath>
+              <FilePath>..\..\..\rt-thread\src\device.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>idle.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\src\idle.c</FilePath>
+              <FilePath>..\..\..\rt-thread\src\idle.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>ipc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\src\ipc.c</FilePath>
+              <FilePath>..\..\..\rt-thread\src\ipc.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>irq.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\src\irq.c</FilePath>
+              <FilePath>..\..\..\rt-thread\src\irq.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>kservice.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\src\kservice.c</FilePath>
+              <FilePath>..\..\..\rt-thread\src\kservice.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>mem.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\src\mem.c</FilePath>
+              <FilePath>..\..\..\rt-thread\src\mem.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>mempool.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\src\mempool.c</FilePath>
+              <FilePath>..\..\..\rt-thread\src\mempool.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>object.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\src\object.c</FilePath>
+              <FilePath>..\..\..\rt-thread\src\object.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>scheduler.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\src\scheduler.c</FilePath>
+              <FilePath>..\..\..\rt-thread\src\scheduler.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>thread.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\src\thread.c</FilePath>
+              <FilePath>..\..\..\rt-thread\src\thread.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>src_timer.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\src\timer.c</FilePath>
+              <FilePath>..\..\..\rt-thread\src\timer.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -1044,35 +847,27 @@
             <File>
               <FileName>cpuport.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\libcpu\arm\cortex-m4\cpuport.c</FilePath>
+              <FilePath>..\..\..\rt-thread\libcpu\arm\cortex-m4\cpuport.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>context_rvds.S</FileName>
               <FileType>2</FileType>
-              <FilePath>..\..\libcpu\arm\cortex-m4\context_rvds.S</FilePath>
+              <FilePath>..\..\..\rt-thread\libcpu\arm\cortex-m4\context_rvds.S</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>backtrace.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\libcpu\arm\common\backtrace.c</FilePath>
+              <FilePath>..\..\..\rt-thread\libcpu\arm\common\backtrace.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>div0.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\libcpu\arm\common\div0.c</FilePath>
+              <FilePath>..\..\..\rt-thread\libcpu\arm\common\div0.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>showmem.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\libcpu\arm\common\showmem.c</FilePath>
+              <FilePath>..\..\..\rt-thread\libcpu\arm\common\showmem.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -1082,53 +877,118 @@
             <File>
               <FileName>serial.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\components\drivers\serial\serial.c</FilePath>
+              <FilePath>..\..\..\rt-thread\components\drivers\serial\serial.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>completion.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\components\drivers\src\completion.c</FilePath>
+              <FilePath>..\..\..\rt-thread\components\drivers\src\completion.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>dataqueue.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\components\drivers\src\dataqueue.c</FilePath>
+              <FilePath>..\..\..\rt-thread\components\drivers\src\dataqueue.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>pipe.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\components\drivers\src\pipe.c</FilePath>
+              <FilePath>..\..\..\rt-thread\components\drivers\src\pipe.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>portal.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\components\drivers\src\portal.c</FilePath>
+              <FilePath>..\..\..\rt-thread\components\drivers\src\portal.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>ringbuffer.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\components\drivers\src\ringbuffer.c</FilePath>
+              <FilePath>..\..\..\rt-thread\components\drivers\src\ringbuffer.c</FilePath>
             </File>
-          </Files>
-          <Files>
             <File>
               <FileName>workqueue.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\components\drivers\src\workqueue.c</FilePath>
+              <FilePath>..\..\..\rt-thread\components\drivers\src\workqueue.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>finsh</GroupName>
+          <Files>
+            <File>
+              <FileName>shell.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\rt-thread\components\finsh\shell.c</FilePath>
+            </File>
+            <File>
+              <FileName>symbol.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\rt-thread\components\finsh\symbol.c</FilePath>
+            </File>
+            <File>
+              <FileName>cmd.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\rt-thread\components\finsh\cmd.c</FilePath>
+            </File>
+            <File>
+              <FileName>finsh_compiler.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\rt-thread\components\finsh\finsh_compiler.c</FilePath>
+            </File>
+            <File>
+              <FileName>finsh_error.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\rt-thread\components\finsh\finsh_error.c</FilePath>
+            </File>
+            <File>
+              <FileName>finsh_heap.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\rt-thread\components\finsh\finsh_heap.c</FilePath>
+            </File>
+            <File>
+              <FileName>finsh_init.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\rt-thread\components\finsh\finsh_init.c</FilePath>
+            </File>
+            <File>
+              <FileName>finsh_node.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\rt-thread\components\finsh\finsh_node.c</FilePath>
+            </File>
+            <File>
+              <FileName>finsh_ops.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\rt-thread\components\finsh\finsh_ops.c</FilePath>
+            </File>
+            <File>
+              <FileName>finsh_parser.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\rt-thread\components\finsh\finsh_parser.c</FilePath>
+            </File>
+            <File>
+              <FileName>finsh_var.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\rt-thread\components\finsh\finsh_var.c</FilePath>
+            </File>
+            <File>
+              <FileName>finsh_vm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\rt-thread\components\finsh\finsh_vm.c</FilePath>
+            </File>
+            <File>
+              <FileName>finsh_token.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\rt-thread\components\finsh\finsh_token.c</FilePath>
             </File>
           </Files>
         </Group>
       </Groups>
     </Target>
   </Targets>
+
+  <RTE>
+    <apis/>
+    <components/>
+    <files/>
+  </RTE>
+
 </Project>
