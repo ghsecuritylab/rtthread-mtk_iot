@@ -1,0 +1,4 @@
+Dependencies for Project 'template', Target 'RT-Thread MTK-IOT': (DO NOT MODIFY !)
+F (.\Libraries\prebuilt\middleware\MTK\wifi_service\combo\lib\wifi_supp\libwifi_CM4_Keil.lib)(0x599BA7E4)()
+F (.\Libraries\prebuilt\middleware\MTK\minisupp\lib\libminisupp_CM4_Keil.lib)(0x599BA7E3)()
+F (.\Libraries\prebuilt\driver\chip\mt7687\lib\libhal_protected_CM4_Keil.lib)(0x599BA7E2)()

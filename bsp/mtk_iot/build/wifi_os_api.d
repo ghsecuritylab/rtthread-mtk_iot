@@ -1,0 +1,15 @@
+.\build\wifi_os_api.o: Libraries\middleware\MTK\wifi_service\combo\src\wifi_os_api.c
+.\build\wifi_os_api.o: ..\..\include\rtthread.h
+.\build\wifi_os_api.o: .\rtconfig.h
+.\build\wifi_os_api.o: ..\..\include\rtdebug.h
+.\build\wifi_os_api.o: ..\..\include\rtdef.h
+.\build\wifi_os_api.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\build\wifi_os_api.o: ..\..\include\rtservice.h
+.\build\wifi_os_api.o: ..\..\include\rtm.h
+.\build\wifi_os_api.o: ..\..\include\rtthread.h
+.\build\wifi_os_api.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\build\wifi_os_api.o: Libraries\middleware\MTK\wifi_service\combo\inc\os_util.h
+.\build\wifi_os_api.o: Libraries\middleware\MTK\wifi_service\combo\inc\wifi_os_api.h
+.\build\wifi_os_api.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\build\wifi_os_api.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\build\wifi_os_api.o: Libraries\kernel\service\inc\wifi_freertos_adapter.h

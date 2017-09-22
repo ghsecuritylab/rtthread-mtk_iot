@@ -1,0 +1,12 @@
+.\build\mib_structs.o: Libraries\middleware\third_party\lwip\src\core\snmp\mib_structs.c
+.\build\mib_structs.o: .\Libraries\middleware\third_party\lwip\src\include\lwip/opt.h
+.\build\mib_structs.o: Libraries\startup\lwipopts.h
+.\build\mib_structs.o: .\Libraries\middleware\third_party\lwip\ports\include\lwip/debug.h
+.\build\mib_structs.o: .\Libraries\middleware\third_party\lwip\src\include\lwip/arch.h
+.\build\mib_structs.o: .\Libraries\middleware\third_party\lwip\ports\include\arch/cc.h
+.\build\mib_structs.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\build\mib_structs.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\build\mib_structs.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\build\mib_structs.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\errno.h
+.\build\mib_structs.o: .\Libraries\middleware\third_party\lwip\src\include\lwip/opt.h
+.\build\mib_structs.o: Libraries\startup\task_def.h

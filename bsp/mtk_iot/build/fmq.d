@@ -1,0 +1,10 @@
+.\build\fmq.o: drivers\fmq.c
+.\build\fmq.o: ..\..\include\rtthread.h
+.\build\fmq.o: .\rtconfig.h
+.\build\fmq.o: ..\..\include\rtdebug.h
+.\build\fmq.o: ..\..\include\rtdef.h
+.\build\fmq.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\build\fmq.o: ..\..\include\rtservice.h
+.\build\fmq.o: ..\..\include\rtm.h
+.\build\fmq.o: ..\..\include\rtthread.h
+.\build\fmq.o: ..\..\include\rthw.h

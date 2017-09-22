@@ -1,0 +1,12 @@
+.\build\asn1_enc.o: Libraries\middleware\third_party\lwip\src\core\snmp\asn1_enc.c
+.\build\asn1_enc.o: .\Libraries\middleware\third_party\lwip\src\include\lwip/opt.h
+.\build\asn1_enc.o: Libraries\startup\lwipopts.h
+.\build\asn1_enc.o: .\Libraries\middleware\third_party\lwip\ports\include\lwip/debug.h
+.\build\asn1_enc.o: .\Libraries\middleware\third_party\lwip\src\include\lwip/arch.h
+.\build\asn1_enc.o: .\Libraries\middleware\third_party\lwip\ports\include\arch/cc.h
+.\build\asn1_enc.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\build\asn1_enc.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\build\asn1_enc.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\build\asn1_enc.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\errno.h
+.\build\asn1_enc.o: .\Libraries\middleware\third_party\lwip\src\include\lwip/opt.h
+.\build\asn1_enc.o: Libraries\startup\task_def.h

@@ -3,16 +3,12 @@ import os
 Import('RTT_ROOT')
 
 cwd = str(Dir('#'))
-print 'cwd:', cwd
 objs = []
 list = os.listdir(cwd)
-print "List", list
 
 for d in list:
     path = os.path.join(cwd, d)
 
-    print 'cwd:',cwd
-    print 'path',path
     if os.path.isfile(os.path.join(path, 'SConscript')):
         objs = objs + SConscript(os.path.join(d, 'SConscript'))
 

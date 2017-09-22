@@ -1,0 +1,15 @@
+.\build\regions_init.o: Libraries\startup\regions_init.c
+.\build\regions_init.o: Libraries\kernel\service\inc\exception_handler.h
+.\build\regions_init.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\build\regions_init.o: Libraries\driver\CMSIS\Device\MTK\mt7687\Include\mt7687.h
+.\build\regions_init.o: Libraries\driver\CMSIS\Include\core_cm4.h
+.\build\regions_init.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\build\regions_init.o: Libraries\driver\CMSIS\Include\core_cmInstr.h
+.\build\regions_init.o: Libraries\driver\CMSIS\Include\core_cmFunc.h
+.\build\regions_init.o: Libraries\driver\CMSIS\Include\core_cmSimd.h
+.\build\regions_init.o: Libraries\driver\CMSIS\Device\MTK\mt7687\Include\system_mt7687.h
+.\build\regions_init.o: Libraries\driver\chip\mt7687\src\common\include\flash_sfc.h
+.\build\regions_init.o: Libraries\driver\chip\inc\hal_flash.h
+.\build\regions_init.o: Libraries\driver\chip\mt7687\inc\hal_platform.h
+.\build\regions_init.o: Libraries\driver\chip\inc\hal_define.h
+.\build\regions_init.o: Libraries\startup\hal_feature_config.h

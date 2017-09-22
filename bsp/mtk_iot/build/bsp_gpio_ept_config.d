@@ -1,0 +1,14 @@
+.\build\bsp_gpio_ept_config.o: Libraries\driver\board\mt76x7_hdk\ept\src\bsp_gpio_ept_config.c
+.\build\bsp_gpio_ept_config.o: Libraries\driver\chip\mt7687\inc\hal_platform.h
+.\build\bsp_gpio_ept_config.o: Libraries\driver\chip\inc\hal_define.h
+.\build\bsp_gpio_ept_config.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\build\bsp_gpio_ept_config.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\build\bsp_gpio_ept_config.o: Libraries\startup\hal_feature_config.h
+.\build\bsp_gpio_ept_config.o: Libraries\driver\CMSIS\Device\MTK\mt7687\Include\mt7687.h
+.\build\bsp_gpio_ept_config.o: Libraries\driver\CMSIS\Include\core_cm4.h
+.\build\bsp_gpio_ept_config.o: Libraries\driver\CMSIS\Include\core_cmInstr.h
+.\build\bsp_gpio_ept_config.o: Libraries\driver\CMSIS\Include\core_cmFunc.h
+.\build\bsp_gpio_ept_config.o: Libraries\driver\CMSIS\Include\core_cmSimd.h
+.\build\bsp_gpio_ept_config.o: Libraries\driver\CMSIS\Device\MTK\mt7687\Include\system_mt7687.h
+.\build\bsp_gpio_ept_config.o: Libraries\driver\board\mt76x7_hdk\ept\inc\bsp_gpio_ept_config.h
+.\build\bsp_gpio_ept_config.o: Libraries\startup\ept_gpio_drv.h

@@ -1,0 +1,12 @@
+.\build\icmp6.o: Libraries\middleware\third_party\lwip\src\core\ipv6\icmp6.c
+.\build\icmp6.o: .\Libraries\middleware\third_party\lwip\src\include\lwip/opt.h
+.\build\icmp6.o: Libraries\startup\lwipopts.h
+.\build\icmp6.o: .\Libraries\middleware\third_party\lwip\ports\include\lwip/debug.h
+.\build\icmp6.o: .\Libraries\middleware\third_party\lwip\src\include\lwip/arch.h
+.\build\icmp6.o: .\Libraries\middleware\third_party\lwip\ports\include\arch/cc.h
+.\build\icmp6.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\build\icmp6.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\build\icmp6.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\build\icmp6.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\errno.h
+.\build\icmp6.o: .\Libraries\middleware\third_party\lwip\src\include\lwip/opt.h
+.\build\icmp6.o: Libraries\startup\task_def.h

@@ -1,0 +1,17 @@
+.\build\ir_tx.o: Libraries\driver\chip\mt7687\src\common\ir_tx.c
+.\build\ir_tx.o: Libraries\driver\chip\mt7687\inc\hal_platform.h
+.\build\ir_tx.o: Libraries\driver\chip\inc\hal_define.h
+.\build\ir_tx.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\build\ir_tx.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\build\ir_tx.o: Libraries\startup\hal_feature_config.h
+.\build\ir_tx.o: Libraries\driver\CMSIS\Device\MTK\mt7687\Include\mt7687.h
+.\build\ir_tx.o: Libraries\driver\CMSIS\Include\core_cm4.h
+.\build\ir_tx.o: Libraries\driver\CMSIS\Include\core_cmInstr.h
+.\build\ir_tx.o: Libraries\driver\CMSIS\Include\core_cmFunc.h
+.\build\ir_tx.o: Libraries\driver\CMSIS\Include\core_cmSimd.h
+.\build\ir_tx.o: Libraries\driver\CMSIS\Device\MTK\mt7687\Include\system_mt7687.h
+.\build\ir_tx.o: Libraries\driver\chip\mt7687\inc\type_def.h
+.\build\ir_tx.o: Libraries\driver\CMSIS\Device\MTK\mt7687\Include\memory_attribute.h
+.\build\ir_tx.o: Libraries\driver\chip\mt7687\src\common\include\ir_tx.h
+.\build\ir_tx.o: Libraries\driver\chip\mt7687\src\common\include\low_hal_irtx.h
+.\build\ir_tx.o: Libraries\driver\CMSIS\Device\MTK\mt7687\Include\mt7687_cm4_hw_memmap.h
