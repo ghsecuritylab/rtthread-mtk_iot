@@ -42,6 +42,8 @@
 #include "mt7687_cm4_hw_memmap.h"
 #include "system_mt7687.h"
 
+//#include "FreeRTOS.h"
+
 #include "hal.h"
 #include "syslog.h"
 #include "top.h"
@@ -148,7 +150,7 @@ static void prvSetupHardware(void)
 {
     /* cache init */
     if (cache_enable(HAL_CACHE_SIZE_32KB) < 0) {
-//        LOG_E(common, "cache enable failed");
+        LOG_E(common, "cache enable failed");
     }
 
     /* bsp_ept_gpio_setting_init() under driver/board/mt76x7_hdk/ept will initialize the GPIO settings
@@ -169,7 +171,7 @@ static void prvSetupHardware(void)
 #ifdef MTK_MINICLI_ENABLE
     bsp_io_def_uart_init();
 #else
-    log_uart_init(HAL_UART_0);
+//    log_uart_init(HAL_UART_0);
 #endif
 
     hal_flash_init();
@@ -198,7 +200,7 @@ static void _main_sys_random_init(void)
     }
 
     if (s != HAL_TRNG_STATUS_OK) {
-//        LOG_I(common, "trng init failed\n");
+        LOG_I(common, "trng init failed\n");
     }
 #endif /* HAL_TRNG_MODULE_ENABLED */
 }

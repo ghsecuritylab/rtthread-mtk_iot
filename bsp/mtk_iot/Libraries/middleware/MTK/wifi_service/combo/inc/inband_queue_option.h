@@ -48,6 +48,9 @@
 #include "connsys_driver.h"
 #include "misc.h"
 
+//
+#include "f_port.h"
+//
 
 #include "inband_queue.h"
 #include "memory_attribute.h"

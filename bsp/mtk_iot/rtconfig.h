@@ -101,6 +101,7 @@
 /* the max number of opened files 		*/
 #define DFS_FD_MAX					4
 
+#if 0
 /* SECTION: lwip, a lighwight TCP/IP protocol stack */
 //#define RT_USING_LWIP
 /* LwIP uses RT-Thread Memory Management */
@@ -158,6 +159,7 @@
 #define CHECKSUM_GEN_IP                 0
 #define CHECKSUM_GEN_UDP                0
 
+#endif
 // <bool name="RT_USING_CMSIS_OS" description="Using CMSIS OS API" default="true" />
 // #define RT_USING_CMSIS_OS
 // <bool name="RT_USING_RTT_CMSIS" description="Using CMSIS in RTT" default="true" />

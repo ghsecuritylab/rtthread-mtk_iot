@@ -33,13 +33,13 @@
  */
 
 /* Kernel includes. */
-#include "FreeRTOS.h"
-#include "task.h"
-#include "semphr.h"
-#include "portmacro.h"
-#include "queue.h"
-#include <timers.h>
-#include <string.h>
+//#include "FreeRTOS.h"
+//#include "task.h"
+//#include "semphr.h"
+//#include "portmacro.h"
+//#include "queue.h"
+//#include <timers.h>
+//#include <string.h>
 
 #include "wifi_os_api.h"
 
@@ -105,7 +105,7 @@ int32_t wifi_os_queue_receive(os_queue_t queue, void *buf, struct timeval *wait_
 */
 int32_t wifi_os_queue_send(os_queue_t queue, void *item, struct timeval *wait_time)
 {
-    assert(queue);
+   assert(queue);
 
     TickType_t ticks;
 
@@ -199,7 +199,8 @@ int32_t wifi_os_receive_from_isr(os_queue_t queue, void *buf)
 */
 os_semaphore_t wifi_os_semphr_create_mutex(void)
 {
-    return (os_semaphore_t) xSemaphoreCreateMutex();
+	printf("%s %d\n", __FUNCTION__, __LINE__);
+   return (os_semaphore_t) xSemaphoreCreateMutex();
 }
 
 /**
@@ -273,6 +274,7 @@ int32_t wifi_os_semphr_take_from_isr(os_semaphore_t semphr)
 */
 int32_t wifi_os_semphr_give_from_isr(os_semaphore_t semphr)
 {
+		printf("%s %s %d\n", __FILE__, __FUNCTION__, __LINE__);
     assert(semphr);
     
     portBASE_TYPE xHigherPriorityTaskWoken = pdFALSE;
@@ -396,7 +398,7 @@ int32_t wifi_os_task_create(task_func_t handler,
 */
 void wifi_os_task_delete(os_task_t task)
 {
-    vTaskDelete(task);
+   vTaskDelete(task);
 }
 
 /**
@@ -406,7 +408,7 @@ void wifi_os_task_delete(os_task_t task)
 */
 void wifi_os_task_sleep(uint32_t ms)
 {
-    vTaskDelay((TickType_t) (ms/portTICK_PERIOD_MS));
+   vTaskDelay((TickType_t) (ms/portTICK_PERIOD_MS));
 }
 
 /**
@@ -515,3 +517,4 @@ void* wifi_os_memmove(void* dest, const void* src, uint32_t size)
     return memmove(dest, src, size);
 }
 #endif
+

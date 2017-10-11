@@ -34,8 +34,9 @@
 
 #include <string.h>
 
-#include "FreeRTOS.h"
-#include "task.h"
+#include "f_port.h"
+//#include "FreeRTOS.h"
+//#include "task.h"
 
 #include "os.h" // FIXME: in libutil
 
@@ -43,7 +44,6 @@
 
 
 static TickType_t gSysBootTick = 0;
-
 
 void os_sleep(os_time_t sec, os_time_t usec)
 {
@@ -89,7 +89,7 @@ unsigned long os_random(void)
 
 int os_get_random(unsigned char *buf, size_t len)
 {
-    int            idx = 0;
+   int            idx = 0;
     unsigned long  rd = 0;
     unsigned char *pc = (unsigned char *)&rd;
 
@@ -106,7 +106,7 @@ int os_get_random(unsigned char *buf, size_t len)
 
 void *os_zalloc(size_t size)
 {
-    return pvPortCalloc(1, size);
+   return pvPortCalloc(1, size);
 }
 
 
@@ -169,5 +169,4 @@ int os_gmtime(os_time_t t, struct os_tm *tm)
 {
     return -1;
 }
-
 

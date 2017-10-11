@@ -34,13 +34,15 @@
  
 #ifndef __WIFI_OS_ADAPTER_H__
 #define __WIFI_OS_ADAPTER_H__
-#include "FreeRTOS.h"
-#include "FreeRTOSConfig.h"
-#include "semphr.h"
-#include "queue.h"
-#include "task.h"
-#include "timers.h"
-#include "portmacro.h"
+//#include "FreeRTOS.h"
+//#include "FreeRTOSConfig.h"
+//#include "semphr.h"
+//#include "queue.h"
+//#include "task.h"
+//#include "timers.h"
+//#include "portmacro.h"
+//
+#include "f_port.h"
 
 typedef QueueHandle_t       os_queue_t;
 typedef SemaphoreHandle_t   os_semaphore_t;

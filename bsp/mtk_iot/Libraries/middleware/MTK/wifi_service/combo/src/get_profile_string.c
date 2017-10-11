@@ -43,7 +43,9 @@
 #include "wifi_api.h"
 #include "wifi_scan.h"
 #include "get_profile_string.h"
+#ifdef MTK_NVDM_ENABLE
 #include "nvdm.h"
+#endif
 #include "syslog.h"
 #include "misc.h"
 

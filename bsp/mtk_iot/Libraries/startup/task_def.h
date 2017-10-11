@@ -35,13 +35,7 @@
 #ifndef __TASK_DEF_H__
 #define __TASK_DEF_H__
 
-//add flyingcys 2017-08-22
-//#include "FreeRTOSConfig.h"
-#define configMAX_PRIORITIES            ( 20 )
-typedef void * QueueHandle_t;
-	#define xQueueHandle QueueHandle_t
-
-
+#include "FreeRTOSConfig.h"
 
 typedef enum {
     TASK_PRIORITY_IDLE = 0,                                 /* lowest, special for idle task */

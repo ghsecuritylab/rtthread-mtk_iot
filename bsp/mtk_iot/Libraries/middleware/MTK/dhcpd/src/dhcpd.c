@@ -36,8 +36,9 @@
 #include "stdlib.h"
 #include "string.h"
 
-#include "FreeRTOS.h"
-#include "task.h"
+#include "f_port.h"
+//#include "FreeRTOS.h"
+//#include "task.h"
 #include "wifi_api.h"
 
 #include "lwip/opt.h"
@@ -48,7 +49,9 @@
 #include "lwip/ip4_addr.h"
 
 #include "dhcpd.h"
+#ifdef MTK_NVDM_ENABLE
 #include "nvdm.h"
+#endif
 #include "task_def.h"
 
 
@@ -540,7 +543,7 @@ int dhcpd_alloc_new_ip(struct ip4_addr *new_ip)
 
 static int dhcpd_opt_dns_tlv_int(char *dest, struct ip4_addr *dns1, struct ip4_addr *dns2)
 {
-    char *opt_len = NULL, *buf_start = dest;
+    char *opt_len = NULL;//, *buf_start = dest;
 
     if ((!dns1 && !dns2) || !dest) {
         return 0;

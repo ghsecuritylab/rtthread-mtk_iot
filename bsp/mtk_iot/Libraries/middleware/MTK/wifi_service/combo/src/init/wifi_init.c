@@ -41,7 +41,9 @@
 #include "net_task.h"
 #include "wifi_init.h"
 #include "syslog.h"
+#ifdef MTK_NVDM_ENABLE
 #include "nvdm.h"
+#endif
 #include "wifi_profile.h"
 #include "get_profile_string.h"
 #include "wifi_default_config.h"
@@ -796,6 +798,7 @@ void wifi_init(wifi_config_t *config, wifi_config_ext_t *config_ext)
         pconfig_ext = &default_config_ext;
     }
 
+    rt_kprintf("[line]:%d %s\n", __LINE__, __FUNCTION__);
     wifi_channel_list_init(&syscfg);
 #if defined(MTK_WIFI_ROM_ENABLE) && !defined(MTK_WIFI_SLIM_ENABLE)
     connsys_set_wifi_profile(&syscfg);

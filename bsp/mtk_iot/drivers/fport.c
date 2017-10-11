@@ -2,9 +2,9 @@
 
 #include "f_port.h"
 
-#define     SHOW_TSK_DEBUG_INFO
-#define     SHOW_QUE_DEBUG_INFO
-#define     SHOW_TIM_DEBUG_INFO
+//#define     SHOW_TSK_DEBUG_INFO
+//#define     SHOW_QUE_DEBUG_INFO
+//#define     SHOW_TIM_DEBUG_INFO
 
 
 extern rt_thread_t rt_current_thread;

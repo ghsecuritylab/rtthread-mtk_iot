@@ -34,12 +34,16 @@
 
 /* Kernel includes. */
 #include "bt_os_layer_api.h"
-#include "FreeRTOS.h"
-#include "task.h"
+//#include "FreeRTOS.h"
+//#include "task.h"
 //#include "timer.h"
-#include "semphr.h"
-#include "portmacro.h"
-#include "queue.h"
+//#include "semphr.h"
+//#include "portmacro.h"
+//#include "queue.h"
+
+#include "f_port.h"
+
+
 #include <timers.h>
 #include <string.h>
 #include "syslog.h"

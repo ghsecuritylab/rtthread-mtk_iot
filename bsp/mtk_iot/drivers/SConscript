@@ -7,6 +7,8 @@ cwd     = os.path.join(str(Dir('#')), 'drivers')
 # add the general drivers.
 src = Split("""
 board.c
+fport.c
+fmq.c
 """)
 
 # add Ethernet drivers.

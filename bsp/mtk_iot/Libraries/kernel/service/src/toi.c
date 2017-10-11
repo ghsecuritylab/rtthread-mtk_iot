@@ -150,4 +150,3 @@ uint8_t tov(char *b, uint32_t *value)
 
     return type;
 }
-

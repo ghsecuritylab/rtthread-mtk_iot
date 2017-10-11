@@ -38,8 +38,8 @@
 #include <string.h>
 #include <stdlib.h>
 
-#include "FreeRTOS.h"
-#include "task.h"
+//#include "FreeRTOS.h"
+//#include "task.h"
 
 #include "os_cli.h"
 

@@ -46,7 +46,7 @@
 #include <stdlib.h>
 #include "type_def.h"
 #include "wifi_api.h"
-#include "FreeRTOS.h"
+//#include "FreeRTOS.h"
 #include "wifi_wps.h"
 #include "nvdm.h"
 #include "syslog.h"

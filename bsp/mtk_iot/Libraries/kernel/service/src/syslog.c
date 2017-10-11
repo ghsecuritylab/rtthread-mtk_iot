@@ -38,9 +38,11 @@
 #include <stdint.h>
 #include <string.h>
 #include <stdbool.h>
-#include "FreeRTOS.h"
-#include "task.h"
-#include "semphr.h"
+//#include "FreeRTOS.h"
+//#include "task.h"
+//#include "semphr.h"
+#include "f_port.h"
+
 #include "syslog.h"
 #include "toi.h"
 #include "hal_gpt.h"

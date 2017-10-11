@@ -38,13 +38,56 @@ extern int lwip_system_init(void);
 #endif
 
 
+void __aeabi_assert(const char *expr, const char *file, int line)
+{
+    rt_kprintf("[line]:%d %s\n", __LINE__, __FUNCTION__);
+	while(1);
+}
+
+void platform_assert(const char *expr, const char *file, int line)
+{
+    rt_kprintf("[line]:%d %s\n", __LINE__, __FUNCTION__);
+	while(1);
+}
+
+
+
+
+#include "wifi_api.h"
+#include "wifi_lwip_helper.h"
+
+void rt_platform_init(void)
+{
+    /* User initial the parameters for wifi initial process,  system will determin which wifi operation mode
+     * will be started , and adopt which settings for the specific mode while wifi initial process is running*/
+    wifi_config_t config = {0};
+    config.opmode = WIFI_MODE_STA_ONLY;
+    strcpy((char *)config.sta_config.ssid, (const char *)"360WiFI-FB321E");
+    strcpy((char *)config.sta_config.password, (const char *)"20112012pw707");
+//    strcpy((char *)config.sta_config.ssid, (const char *)"TP-LINK_487880");
+//    strcpy((char *)config.sta_config.password, (const char *)"chenyisong12345");
+    config.sta_config.ssid_length = strlen((const char *)config.sta_config.ssid);
+    config.sta_config.password_length = strlen((const char *)config.sta_config.password);
+
+
+     rt_kprintf("[line]:%d %s\n", __LINE__, __FUNCTION__);
+   /* Initialize wifi stack and register wifi init complete event handler,
+     * notes:  the wifi initial process will be implemented and finished while system task scheduler is running.*/
+    wifi_init(&config, NULL);
+
+    /* Tcpip stack and net interface initialization,  dhcp client, dhcp server process initialization*/
+		lwip_network_init(config.opmode);
+    lwip_net_start(config.opmode);
+}
+
+
 void rt_init_thread_entry(void* parameter)
 {
 		rt_uint32_t t = 0;
     rt_kprintf("[line]:%d %s\n", __LINE__, __FUNCTION__);
     {
         extern void rt_platform_init(void);
-//        rt_platform_init();
+        rt_platform_init();
     }
 
     /* Filesystem Initialization */
@@ -99,7 +142,7 @@ int rt_application_init(void)
 
     tid = rt_thread_create("init",
                             rt_init_thread_entry, RT_NULL,
-                            2048, RT_THREAD_PRIORITY_MAX/3, 20);
+                            4096, RT_THREAD_PRIORITY_MAX-3, 20);
 
     if (tid != RT_NULL) 
         rt_thread_startup(tid);

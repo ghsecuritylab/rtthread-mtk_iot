@@ -43,12 +43,18 @@
 #include "wifi_inband.h"
 #include "os.h"
 #include "os_util.h"
+#ifdef MTK_NVDM_ENABLE
 #include "nvdm.h"
+#endif
 #include "get_profile_string.h"
 #include "timer.h"
 #include "syslog.h"
 #include "wifi_profile.h"
+
+#if defined(MTK_MINICLI_ENABLE)
 #include "cli.h"
+#endif
+
 #include "connsys_profile.h"
 #include "misc.h"
 

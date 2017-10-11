@@ -687,7 +687,7 @@ __EXHDLR_ATTR__ void CommonFault_Handler(void)
         "bx lr                         \n"
     );
 }
-
+#if 0
 /**
   * @brief  This function handles Hard Fault exception.
   * @param  None
@@ -702,7 +702,7 @@ __EXHDLR_ATTR__ void HardFault_Handler(void)
         "bl Hard_Fault_Handler         \n"
     );
 }
-
+#endif
 /**
   * @brief  This function handles Memory Manage exception.
   * @param  None
@@ -810,7 +810,7 @@ __EXHDLR_ATTR__ void CommonFault_Handler(void)
     mrsne r0, psp
     bx lr
 }
-
+#if 0
 /**
   * @brief  This function handles Hard Fault exception.
   * @param  None
@@ -824,7 +824,7 @@ __EXHDLR_ATTR__ void HardFault_Handler(void)
     bl __cpp(CommonFault_Handler)
     bl __cpp(Hard_Fault_Handler)
 }
-
+#endif
 /**
   * @brief  This function handles Memory Manage exception.
   * @param  None
@@ -886,7 +886,7 @@ __EXHDLR_ATTR__  void DebugMon_Handler(void)
 
 ATTR_TEXT_IN_RAM TaskContext* get_pTaskContext(void);
 ATTR_TEXT_IN_RAM void CommonFault_Handler(void);
-ATTR_TEXT_IN_RAM void HardFault_Handler(void);
+//ATTR_TEXT_IN_RAM void HardFault_Handler(void);
 ATTR_TEXT_IN_RAM void MemManage_Handler(void);
 ATTR_TEXT_IN_RAM void BusFault_Handler(void);
 ATTR_TEXT_IN_RAM void UsageFault_Handler(void);
@@ -933,7 +933,7 @@ __EXHDLR_ATTR__ void CommonFault_Handler(void)
         ::"r"(pxExceptionStack), "r"(pTaskContext)
     );
 }
-
+#if 0
 /**
   * @brief  This function handles Hard Fault exception.
   * @param  None
@@ -948,7 +948,7 @@ __EXHDLR_ATTR__ void HardFault_Handler(void)
         "bl Hard_Fault_Handler         \n"
     );
 }
-
+#endif
 /**
   * @brief  This function handles Memory Manage exception.
   * @param  None

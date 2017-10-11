@@ -1,9 +1,0 @@
-.\build\os_utils.o: Libraries\middleware\MTK\wifi_service\combo\src\wifi_os_ext\os_utils.c
-.\build\os_utils.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-.\build\os_utils.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-.\build\os_utils.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-.\build\os_utils.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
-.\build\os_utils.o: .\Libraries\middleware\MTK\wifi_service\combo\inc\os.h
-.\build\os_utils.o: Libraries\driver\chip\mt7687\inc\type_def.h
-.\build\os_utils.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-.\build\os_utils.o: Libraries\driver\CMSIS\Device\MTK\mt7687\Include\memory_attribute.h

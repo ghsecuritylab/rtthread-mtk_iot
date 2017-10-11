@@ -22,7 +22,7 @@
 *============================================================================
 ****************************************************************************/
 
-
+#if 0
 
 /*Output for default variable names*/
 /*@XXX_XX_PIN in gpio.cmp          */
@@ -46,5 +46,5 @@ const char BSP_BIO_SENSOR_RST_PORT_PIN = 0xff;
 const char BSP_BIO_SENSOR_AFE_PWD_PIN = 0xff;
 
 
-
+#endif
 

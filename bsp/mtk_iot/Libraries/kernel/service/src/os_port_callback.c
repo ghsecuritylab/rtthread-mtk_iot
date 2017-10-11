@@ -66,11 +66,11 @@
 
     1 tab == 4 spaces!
 */
-
+#if 0
 #include <stdio.h>
 
-#include "FreeRTOS.h"
-#include "task.h"
+//#include "FreeRTOS.h"
+//#include "task.h"
 
 #include "os_port_callback.h"
 
@@ -103,3 +103,4 @@ void vApplicationStackOverflowHook( TaskHandle_t xTask, char *pcTaskName )
     configASSERT(0);
 }
 #endif 
+#endif

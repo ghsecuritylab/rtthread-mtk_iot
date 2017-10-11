@@ -34,6 +34,8 @@
 
 #ifdef MTK_NVDM_ENABLE
 
+#include "f_port.h"
+//
 #include "hal_flash.h"
 #include "syslog.h"
 #include <assert.h>
@@ -114,9 +116,9 @@ void nvdm_port_flash_erase(uint32_t address)
 #define NVDM_PORT_USE_OS
 
 #ifdef NVDM_PORT_USE_OS
-#include "FreeRTOS.h"
-#include "task.h"
-#include "semphr.h"
+//#include "FreeRTOS.h"
+//#include "task.h"
+//#include "semphr.h"
 
 typedef SemaphoreHandle_t nvdm_port_mutex_t;
 static nvdm_port_mutex_t g_nvdm_mutex;
