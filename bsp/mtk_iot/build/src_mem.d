@@ -1,0 +1,10 @@
+.\build\src_mem.o: ..\..\src\mem.c
+.\build\src_mem.o: ..\..\include\rthw.h
+.\build\src_mem.o: ..\..\include\rtthread.h
+.\build\src_mem.o: .\rtconfig.h
+.\build\src_mem.o: ..\..\include\rtdebug.h
+.\build\src_mem.o: ..\..\include\rtdef.h
+.\build\src_mem.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\build\src_mem.o: ..\..\include\rtservice.h
+.\build\src_mem.o: ..\..\include\rtm.h
+.\build\src_mem.o: ..\..\include\rtthread.h

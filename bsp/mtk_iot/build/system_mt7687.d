@@ -1,0 +1,16 @@
+.\build\system_mt7687.o: Libraries\startup\system_mt7687.c
+.\build\system_mt7687.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\build\system_mt7687.o: Libraries\driver\CMSIS\Device\MTK\mt7687\Include\mt7687.h
+.\build\system_mt7687.o: Libraries\driver\CMSIS\Include\core_cm4.h
+.\build\system_mt7687.o: Libraries\driver\CMSIS\Include\core_cmInstr.h
+.\build\system_mt7687.o: Libraries\driver\CMSIS\Include\core_cmFunc.h
+.\build\system_mt7687.o: Libraries\driver\CMSIS\Include\core_cmSimd.h
+.\build\system_mt7687.o: Libraries\driver\CMSIS\Device\MTK\mt7687\Include\system_mt7687.h
+.\build\system_mt7687.o: Libraries\driver\CMSIS\Device\MTK\mt7687\Include\mt7687_cm4_hw_memmap.h
+.\build\system_mt7687.o: Libraries\driver\chip\mt7687\inc\type_def.h
+.\build\system_mt7687.o: Libraries\driver\CMSIS\Device\MTK\mt7687\Include\memory_attribute.h
+.\build\system_mt7687.o: Libraries\driver\CMSIS\Device\MTK\mt7687\Include\exception_mt7687.h
+.\build\system_mt7687.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\build\system_mt7687.o: Libraries\driver\chip\mt7687\inc\top.h
+.\build\system_mt7687.o: Libraries\startup\flash_map.h
+.\build\system_mt7687.o: Libraries\driver\chip\mt7687\inc\hal_cache_hw.h

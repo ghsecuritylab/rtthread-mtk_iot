@@ -572,7 +572,6 @@ static int32_t low_level_output_scatter(struct netif *netif, struct pbuf *p)
 
 #ifdef MTK_MINISUPP_ENABLE
 #ifdef MTK_WIFI_REPEATER_ENABLE
-     rt_kprintf("[line]:%d %s\n", __LINE__, __FUNCTION__);
     int    i = 0;
     struct eth_hdr *ethhdr;
     struct etharp_hdr *hdr;
@@ -584,7 +583,6 @@ static int32_t low_level_output_scatter(struct netif *netif, struct pbuf *p)
     // Check if OpMode is Repeater Mode. Broadcast to all interfaces only at Repeater Mode.
     if (__g_wpa_supplicant_api.wpa_supplicant_entry_op_mode_get)
     {
-				rt_kprintf("[line]:%d %s\n", __LINE__, __FUNCTION__);
        __g_wpa_supplicant_api.wpa_supplicant_entry_op_mode_get(&op_mode);
         if (op_mode == WIFI_MODE_REPEATER)
         {
@@ -594,7 +592,6 @@ static int32_t low_level_output_scatter(struct netif *netif, struct pbuf *p)
 
     for (i=0; i<=sndAllInf; i++)
     {
-			rt_kprintf("[line]:%d %s\n", __LINE__, __FUNCTION__);
         total_len = 0;
         // Change Source Mac for Ether/Arp packets if it is need
         if (op_mode == WIFI_MODE_REPEATER)
@@ -653,15 +650,15 @@ static int32_t low_level_output_scatter(struct netif *netif, struct pbuf *p)
     {
         inf_num = IOT_PACKET_TYPE_INF_0_IDX;
     }
-    //LOG_I(lwip, "sendto inf_num(%d)...%s-%d\n",inf_num,__FUNCTION__,__LINE__);
-    rt_kprintf("sendto inf_num(%d)...%s-%d\n",inf_num,__FUNCTION__,__LINE__);
+    LOG_I(lwip, "sendto inf_num(%d)...%s-%d\n",inf_num,__FUNCTION__,__LINE__);
+//    rt_kprintf("sendto inf_num(%d)...%s-%d\n",inf_num,__FUNCTION__,__LINE__);
     for(q = p; q != NULL; q = q->next) {
         if (tx_info.buf_num >= MAX_TX_BUF)
         {
- //           LOG_E(lwip, "ERROR! ==> low_level_output_scatter, buf_num exceed MAX_TX_BUF\n");
- //           LOG_E(lwip, "tx_info.buf_num = %u, MAX_TX_BUF = %u\n",
-             rt_kprintf("ERROR! ==> low_level_output_scatter, buf_num exceed MAX_TX_BUF\n");
-            rt_kprintf("tx_info.buf_num = %u, MAX_TX_BUF = %u\n",
+            LOG_E(lwip, "ERROR! ==> low_level_output_scatter, buf_num exceed MAX_TX_BUF\n");
+            LOG_E(lwip, "tx_info.buf_num = %u, MAX_TX_BUF = %u\n",
+//             rt_kprintf("ERROR! ==> low_level_output_scatter, buf_num exceed MAX_TX_BUF\n");
+//            rt_kprintf("tx_info.buf_num = %u, MAX_TX_BUF = %u\n",
                (unsigned int)tx_info.buf_num,
                 (unsigned int)MAX_TX_BUF);
             connsys_dump_tx_scatter_info(&tx_info);
@@ -805,7 +802,6 @@ struct mt76x7_connsys_ops lwip_connsys_ops = {
 
 void ethernetif_init_callback(void)
 {
-     rt_kprintf("[line]:%d %s\n", __LINE__, __FUNCTION__);
     inband_queue_register_callback(inband_handle_func);
     connsys_ops = &lwip_connsys_ops;
     connsys_enable_interrupt();
@@ -829,7 +825,6 @@ ethernetif_init1(struct netif *netif)
 {
   struct ethernetif *ethernetif;
 
-     rt_kprintf("[line]:%d %s\n", __LINE__, __FUNCTION__);
   LWIP_ASSERT("netif != NULL", (netif != NULL));
 
   ethernetif = mem_malloc(sizeof(struct ethernetif));
@@ -1044,7 +1039,6 @@ ethernetif_intr_enhance_mode_dispatch(struct pbuf *p, struct netif *netif)
 {
   //struct ethernetif *ethernetif;
 
-     rt_kprintf("[line]:%d %s\n", __LINE__, __FUNCTION__);
   struct eth_hdr *ethhdr;
 
   //ethernetif = netif->state;
@@ -1147,7 +1141,6 @@ PKT_HANDLE_RESULT_T lwip_deliver_tcpip(void* pkt, uint8_t *payload, uint32_t len
     if(p != NULL){
         //int i;
 
-				rt_kprintf("[line]:%d %s\n", __LINE__, __FUNCTION__);
         if (inf == 1)
             netif = &ap_if;
 
@@ -1168,7 +1161,6 @@ void inband_handle_func(void* pkt_ptr, unsigned char *payload, unsigned int len)
 {
     struct pbuf *p = (struct pbuf *) pkt_ptr;
 
-     rt_kprintf("[line]:%d %s\n", __LINE__, __FUNCTION__);
     inband_queue_handler(pkt_ptr, payload, len);
     pbuf_free(p);
     pkt_ptr = NULL;
@@ -1181,7 +1173,6 @@ void ethernetif_free_pkt(void *pkt_ptr)
 
 uint8_t enqueue_bottom_half_from_isr(int32_t port, PNETFUNC func)
 {
-     rt_kprintf("[line]:%d %s\n", __LINE__, __FUNCTION__);
     return NetJobAddFromISR(func, 0, 0);
 }
 
