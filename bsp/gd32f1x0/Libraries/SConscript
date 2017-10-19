@@ -1,0 +1,61 @@
+import rtconfig
+Import('RTT_ROOT')
+from building import *
+
+# get current directory
+cwd = GetCurrentDir()
+
+# The set of source files associated with this SConscript file.
+src = Split("""
+CMSIS/system_gd32f1x0.c
+Peripherals/src/gd32f1x0_adc.c
+Peripherals/src/gd32f1x0_can.c
+Peripherals/src/gd32f1x0_cec.c
+Peripherals/src/gd32f1x0_cmp.c
+Peripherals/src/gd32f1x0_crc.c
+Peripherals/src/gd32f1x0_dac.c
+Peripherals/src/gd32f1x0_dma.c
+Peripherals/src/gd32f1x0_exti.c
+Peripherals/src/gd32f1x0_fmc.c
+Peripherals/src/gd32f1x0_gpio.c
+Peripherals/src/gd32f1x0_i2c.c
+Peripherals/src/gd32f1x0_ivref.c
+Peripherals/src/gd32f1x0_iwdg.c
+Peripherals/src/gd32f1x0_lcd.c
+Peripherals/src/gd32f1x0_mcudbg.c
+Peripherals/src/gd32f1x0_misc.c
+Peripherals/src/gd32f1x0_opamp.c
+Peripherals/src/gd32f1x0_pwr.c
+Peripherals/src/gd32f1x0_rcc.c
+Peripherals/src/gd32f1x0_rtc.c
+Peripherals/src/gd32f1x0_spi.c
+Peripherals/src/gd32f1x0_syscfg.c
+Peripherals/src/gd32f1x0_timer.c
+Peripherals/src/gd32f1x0_tsi.c
+Peripherals/src/gd32f1x0_usart.c
+Peripherals/src/gd32f1x0_wwdg.c
+""")
+
+# starupt scripts for each STM32 kind
+startup_scripts = {}
+startup_scripts['GD32F1x0']     = 'startup_gd32f1x0.s'
+
+# add for startup script 
+if rtconfig.CROSS_TOOL == 'keil':
+    src = src + ['CMSIS/ARM/' + startup_scripts[rtconfig.GD32_TYPE]]
+elif rtconfig.CROSS_TOOL == 'iar':
+    src = src + ['CMSIS/IAR/' + startup_scripts[rtconfig.GD32_TYPE]]
+
+path = [cwd + '/Peripherals/inc']
+path += [cwd + '/CMSIS']
+
+if GetDepend(['RT_USING_BSP_CMSIS']):
+    path += [cwd + '/CMSIS']
+    src += [cwd + '/CMSIS/core_cm3.c']
+elif GetDepend(['RT_USING_RTT_CMSIS']):
+    path += [RTT_ROOT + '/components/CMSIS/Include']
+
+CPPDEFINES = ['GD32F130_150', 'USE_STDPERIPH_DRIVER', rtconfig.GD32_TYPE]
+group = DefineGroup('GD32_StdPeriph', src, depend = [''], CPPPATH = path, CPPDEFINES = CPPDEFINES)
+
+Return('group')

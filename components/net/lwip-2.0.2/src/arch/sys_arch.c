@@ -177,7 +177,7 @@ int lwip_system_init(void)
 
 	return 0;
 }
-//INIT_COMPONENT_EXPORT(lwip_system_init);
+INIT_COMPONENT_EXPORT(lwip_system_init);
 
 void sys_init(void)
 {
@@ -556,6 +556,7 @@ sys_thread_t sys_thread_new(const char    *name,
 
     RT_DEBUG_NOT_IN_INTERRUPT;
 
+		rt_kprintf("pcName:%s uxPriority:%d usStackDepth:%d", name, prio, stacksize);
     /* create thread */
     t = rt_thread_create(name, thread, arg, stacksize, prio, 20);
     RT_ASSERT(t != RT_NULL);
@@ -602,7 +603,7 @@ u32_t sys_now(void)
 }
 
 
-WEAK
+RT_WEAK
 void mem_init(void)
 {
 }

@@ -1,0 +1,124 @@
+import rtconfig
+Import('RTT_ROOT')
+from building import *
+
+# get current directory
+cwd = GetCurrentDir()
+
+'''
+startup/system_mt7687.c
+startup/sys_init.c
+startup/wifi_lwip_helper.c
+startup/network_default_config.c
+'''
+
+# The set of source files associated with this SConscript file.
+src = Split("""
+driver/board/mt76x7_hdk/ept/src/bsp_gpio_ept_config.c
+driver/board/mt76x7_hdk/external_flash/src/bsp_flash_config.c
+""")
+
+src += Glob('driver/chip/mt7687/src/common/*.c')
+src += Glob('driver/chip/mt7687/src/*.c')
+src += Glob('driver/chip/mt7687/src_core/*.c')
+
+
+src += Split("""
+middleware/MTK/wifi_service/combo/src/wifi_os_ext/os_util.c
+middleware/MTK/wifi_service/combo/src/wifi_os_ext/os_utils.c
+middleware/MTK/wifi_service/combo/src/misc.c
+""")
+
+src += Split("""
+middleware/MTK/wifi_service/combo/src/init/wifi_init.c
+middleware/MTK/wifi_service/combo/src/init/wifi_default_config.c
+middleware/MTK/wifi_service/combo/src/inband_queue_option.c
+middleware/MTK/wifi_service/combo/src/wifi_os_api.c
+middleware/MTK/wifi_service/combo/src/wifi_profile.c
+middleware/MTK/wifi_service/combo/src/get_profile_string.c
+""")
+
+src += Split("""
+kernel/service/src/syslog.c
+middleware/MTK/connsys/src/connsys_driver.c
+middleware/MTK/connsys/src/connsys_bus.c
+middleware/MTK/connsys/src/connsys_util.c
+""")
+
+
+src += Split("""
+middleware/MTK/dhcpd/src/dhcpd.c
+""")
+
+#add for startup script 
+if rtconfig.CROSS_TOOL == 'gcc':
+    src = src + ['startup/mt7687/gcc/startup_mt7687.s']
+elif rtconfig.CROSS_TOOL == 'keil':
+    src = src + ['startup/mt7687/mdk-arm/startup_mt7687.s']
+elif rtconfig.CROSS_TOOL == 'iar':
+    src = src + ['startup/mt7687/iar/startup_mt7687.s']
+
+
+path = [cwd + r'/startup/',
+	cwd + r'/startup/mt7687/',
+    cwd + r'/driver/CMSIS/Include',
+    cwd + r'/driver/CMSIS/Device/MTK/mt7687/Include',
+    cwd + r'/driver/chip/mt7687/inc',
+    cwd + r'/driver/chip/mt7687/src/common/include']
+
+path += [cwd + r'/driver/chip/inc', 
+	cwd + r'/driver/chip/mt7687/inc', 
+    cwd + r'/driver/chip/mt7687/src/common/include',
+    cwd + r'/driver/chip/mt7687/src_core/',
+    cwd + r'/driver/chip/mt7687/src_core/MDK-ARM/libhal_core_CM4_Keil/inc']
+
+path += [cwd + r'/driver/board/mt76x7_hdk/external_flash/inc',
+	cwd + r'/driver/board/mt76x7_hdk/ept/inc']
+
+path += [cwd + r'/middleware/MTK/connsys/inc',
+	cwd + r'/middleware/MTK/wifi_service/combo/inc']
+
+path += [cwd + r'/kernel/service/inc',
+	cwd + r'/middleware/MTK/dhcpd/inc']
+
+path += [cwd + '/prebuilt/middleware/MTK/minisupp/inc']
+
+'''
+#lwip
+src += Glob("middleware/third_party/lwip/src/api/*.c")
+src += Glob("middleware/third_party/lwip/src/core/ipv4/*.c") + Glob("middleware/third_party/lwip/src/core/ipv6/*.c")
+src += Split("""
+middleware/third_party/lwip/src/core/def.c
+middleware/third_party/lwip/src/core/dhcp.c
+middleware/third_party/lwip/src/core/dns.c
+middleware/third_party/lwip/src/core/inet_chksum.c
+middleware/third_party/lwip/src/core/init.c
+middleware/third_party/lwip/src/core/lwip_timers.c
+middleware/third_party/lwip/src/core/mem.c
+middleware/third_party/lwip/src/core/memp.c
+middleware/third_party/lwip/src/core/netif.c
+middleware/third_party/lwip/src/core/raw.c
+middleware/third_party/lwip/src/core/stats.c
+middleware/third_party/lwip/src/core/sys.c
+middleware/third_party/lwip/src/core/tcp.c
+middleware/third_party/lwip/src/core/tcp_in.c
+middleware/third_party/lwip/src/core/udp.c
+middleware/third_party/lwip/src/netif/etharp.c
+middleware/third_party/lwip/ports/ethernetif.c
+middleware/third_party/lwip/ports/sys_arch.c
+middleware/third_party/lwip/ports/tcp_out.c
+middleware/third_party/lwip/ports/pbuf.c
+""")
+
+
+path += [cwd + r'/middleware/third_party/lwip/src/include',
+	cwd + r'/middleware/third_party/lwip/src/include/lwip',
+	cwd + r'/middleware/third_party/lwip/ports/include']
+'''
+
+#CPPDEFINES = ['USE_STDPERIPH_DRIVER', rtconfig.STM32_TYPE]
+#CPPDEFINES = ['MTK_DEBUG_LEVEL_NONE PRODUCT_VERSION=7697 CFG_SUPPORT_SMNT_PROTO=2 MTK_HAL_NO_LOG_ENABLE MTK_MINISUPP_ENABLE MTK_WIFI_PRIVILEGE_ENABLE ']
+CPPDEFINES = ['MTK_DEBUG_LEVEL_NONE __BT_DEBUG__ MTK_HCI_CONSOLE_MIX_ENABLE MTK_MINISUPP_ENABLE MTK_BSPEXT_ENABLE MTK_LWIP_ENABLE PRODUCT_VERSION=7697 MTK_FLASH_DIRECT_DL MTK_PATCH_DL_ENABLE  MTK_WIFI_REPEATER_ENABLE  MTK_DEBUG_LEVEL_INFO  MTK_WIFI_PRIVILEGE_ENABLE MBEDTLS_CONFIG_FILE=<config-mtk-md5.h>']
+group = DefineGroup('Libraries', src, depend = [''], CPPPATH = path, CPPDEFINES = CPPDEFINES)
+
+Return('group')
